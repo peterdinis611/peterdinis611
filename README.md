@@ -14,14 +14,8 @@
 
 ## Tech
 
-**Frontend:** TypeScript / React / Next.js / React Native / Tailwind / Sass / Zustand / Figma
-
-**Backend:** Node.js / NestJS / Express / GraphQL / C# / .NET
-
-**Data & ops:** PostgreSQL / MongoDB / MySQL / Docker / Linux / Jest
-
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,nodejs,nestjs,express,graphql,tailwind,sass,cs,dotnet,postgres,mongodb,mysql,docker,linux,jest,figma&perline=10&theme=dark" alt="Skills" />
+  <img src="./assets/tech.svg" width="100%" alt="Tech stack" />
 </p>
 
 ---

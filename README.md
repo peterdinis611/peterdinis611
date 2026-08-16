@@ -60,7 +60,16 @@
 ## Contact
 
 <p align="center">
+  <a href="https://dinis-portfolio.vercel.app/">
+    <img src="./assets/contact.svg" width="100%" alt="Contact" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://dinis-portfolio.vercel.app/">
+    <img src="https://img.shields.io/badge/Portfolio-111111?style=for-the-badge&logo=vercel&logoColor=4c8bff" alt="Open portfolio" />
+  </a>
   <a href="mailto:peterdinis611@gmail.com">
-    <img src="./assets/contact.svg" width="100%" alt="Contact - email peterdinis611@gmail.com" />
+    <img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=4c8bff" alt="Email peterdinis611@gmail.com" />
   </a>
 </p>

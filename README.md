@@ -60,7 +60,7 @@
 ## Contact
 
 <p align="center">
-  <a href="https://dinis-portfolio.vercel.app/">
-    <img src="./assets/contact.svg" width="100%" alt="Contact" />
+  <a href="mailto:peterdinis611@gmail.com">
+    <img src="./assets/contact.svg" width="100%" alt="Contact - email peterdinis611@gmail.com" />
   </a>
 </p>

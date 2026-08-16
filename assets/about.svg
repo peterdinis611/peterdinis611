@@ -56,11 +56,11 @@
   </g>
   <g class="rise d4">
     <text x="48" y="172" class="k">BASE</text>
-    <text x="180" y="172" class="v">bardejov / slovakia</text>
+    <text x="180" y="172" class="v">praha / slovakia</text>
   </g>
   <g class="rise d5">
     <text x="48" y="210" class="k">STATUS</text>
-    <circle class="pulse" cx="188" cy="205" r="5" fill="#4c8bff"/>
+    <circle class="pulse" cx="188" cy="205" r="5" fill="#888888"/>
     <text x="204" y="210" class="v">offline - not taking work right now</text>
   </g>
 

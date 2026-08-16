@@ -28,7 +28,7 @@
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 0.16em;
-          fill: #111111;
+          fill: #eeeeee;
         }
         .nav {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -89,13 +89,13 @@
 
   <g class="rise d3">
     <text x="280" y="176" class="role">FULL-STACK DEVELOPER / JS / TS</text>
-    <text x="280" y="202" class="meta">BARDEJOV / SLOVAKIA</text>
+    <text x="280" y="202" class="meta">PRAHA / SLOVAKIA</text>
   </g>
 
   <g class="rise d4">
-    <rect x="280" y="224" width="268" height="30" fill="#4c8bff"/>
-    <circle class="pulse" cx="298" cy="239" r="4" fill="#111111"/>
-    <text x="314" y="244" class="badge">NOT AVAILABLE FOR PROJECTS</text>
+    <rect x="280" y="224" width="300" height="34" fill="#555555"/>
+    <circle class="pulse" cx="302" cy="241" r="5" fill="#eeeeee"/>
+    <text x="320" y="246" class="badge">NOT AVAILABLE FOR PROJECTS</text>
   </g>
 
   <g class="rise d5">

@@ -2,21 +2,6 @@
   <img src="./assets/header.svg" width="100%" alt="Peter Dinis - Full-Stack Developer" />
 </p>
 
-<p align="center">
-  <a href="https://dinis-portfolio.vercel.app/">
-    <img src="https://img.shields.io/badge/Portfolio-111111?style=for-the-badge&logo=vercel&logoColor=4c8bff" alt="Portfolio" />
-  </a>
-  <a href="https://www.linkedin.com/in/peter-dinis-58520b214/">
-    <img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=linkedin&logoColor=4c8bff" alt="LinkedIn" />
-  </a>
-  <a href="https://www.instagram.com/peterdinis1/">
-    <img src="https://img.shields.io/badge/Instagram-111111?style=for-the-badge&logo=instagram&logoColor=4c8bff" alt="Instagram" />
-  </a>
-  <a href="https://github.com/peterdinis611">
-    <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=4c8bff" alt="GitHub" />
-  </a>
-</p>
-
 ---
 
 ## About
@@ -66,9 +51,6 @@
 </p>
 
 <p align="center">
-  <a href="https://dinis-portfolio.vercel.app/">
-    <img src="https://img.shields.io/badge/Portfolio-111111?style=for-the-badge&logo=vercel&logoColor=4c8bff" alt="Open portfolio" />
-  </a>
   <a href="mailto:peterdinis611@gmail.com">
     <img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=4c8bff" alt="Email peterdinis611@gmail.com" />
   </a>

@@ -30,12 +30,6 @@
           letter-spacing: 0.16em;
           fill: #eeeeee;
         }
-        .nav {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 11px;
-          letter-spacing: 0.14em;
-          fill: #eeeeee;
-        }
         .label {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
           font-size: 10px;
@@ -89,7 +83,7 @@
 
   <g class="rise d3">
     <text x="280" y="176" class="role">FULL-STACK DEVELOPER / JS / TS</text>
-    <text x="280" y="202" class="meta">PRAHA / SLOVAKIA</text>
+    <text x="280" y="202" class="meta">PRAHA / CZECHIA</text>
   </g>
 
   <g class="rise d4">

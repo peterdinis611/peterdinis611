@@ -1,17 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-label="About">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" role="img" aria-label="About">
   <defs>
     <style>
       <![CDATA[
+        .eyebrow {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 11px;
+          letter-spacing: 0.28em;
+          fill: #4c8bff;
+        }
         .k {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 12px;
-          letter-spacing: 0.12em;
+          font-size: 11px;
+          letter-spacing: 0.18em;
           fill: #4c8bff;
-          text-transform: uppercase;
         }
         .v {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 15px;
+          font-size: 16px;
           fill: #eeeeee;
         }
         .tag {
@@ -19,51 +24,78 @@
           font-size: 13px;
           fill: #888888;
         }
+        .big {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 28px;
+          font-weight: 700;
+          letter-spacing: -0.03em;
+          fill: #eeeeee;
+        }
         .pulse { animation: blink 1.4s ease-in-out infinite; }
-        .rise { opacity: 0; animation: up 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .rise {
+          opacity: 0;
+          animation: up 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
         .d1 { animation-delay: 0.05s; }
         .d2 { animation-delay: 0.12s; }
         .d3 { animation-delay: 0.19s; }
         .d4 { animation-delay: 0.26s; }
         .d5 { animation-delay: 0.33s; }
+        .d6 { animation-delay: 0.4s; }
         @keyframes blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.35; }
         }
         @keyframes up {
-          from { opacity: 0; transform: translateX(-10px); }
-          to { opacity: 1; transform: translateX(0); }
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
         }
       ]]>
     </style>
   </defs>
 
-  <rect width="920" height="300" fill="#111111"/>
-  <rect x="18" y="18" width="884" height="210" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-  <rect x="18" y="18" width="5" height="210" fill="#4c8bff"/>
+  <rect width="920" height="340" fill="#111111"/>
+  <rect x="18" y="18" width="884" height="304" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <rect x="18" y="18" width="5" height="304" fill="#4c8bff"/>
+
+  <path d="M40 48 H58 M40 48 V66" fill="none" stroke="#4c8bff" stroke-width="2"/>
+  <path d="M880 48 H862 M880 48 V66" fill="none" stroke="#4c8bff" stroke-width="2"/>
+  <path d="M40 292 H58 M40 292 V274" fill="none" stroke="#4c8bff" stroke-width="2"/>
+  <path d="M880 292 H862 M880 292 V274" fill="none" stroke="#4c8bff" stroke-width="2"/>
 
   <g class="rise d1">
-    <text x="48" y="58" class="k">WHOAMI</text>
-    <text x="180" y="58" class="v">peter dinis</text>
-  </g>
-  <g class="rise d2">
-    <text x="48" y="96" class="k">ROLE</text>
-    <text x="180" y="96" class="v">full-stack / js / ts ecosystem</text>
-  </g>
-  <g class="rise d3">
-    <text x="48" y="134" class="k">CRAFT</text>
-    <text x="180" y="134" class="v">figma -&gt; next.js -&gt; nestjs -&gt; postgres</text>
-  </g>
-  <g class="rise d4">
-    <text x="48" y="172" class="k">BASE</text>
-    <text x="180" y="172" class="v">praha / czechia</text>
-  </g>
-  <g class="rise d5">
-    <text x="48" y="210" class="k">STATUS</text>
-    <circle class="pulse" cx="188" cy="205" r="5" fill="#888888"/>
-    <text x="204" y="210" class="v">offline - not taking work right now</text>
+    <text x="64" y="64" class="eyebrow">ABOUT // DOSSIER</text>
+    <text x="64" y="108" class="big">peter dinis</text>
   </g>
 
-  <text x="18" y="268" class="tag">Builds modern web &amp; mobile experiences end-to-end.</text>
-  <text x="18" y="290" class="tag">Clean code. Sharp UI. Ships that hold up.</text>
+  <!-- two-column rows -->
+  <g class="rise d2">
+    <line x1="64" y1="128" x2="856" y2="128" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="64" y="158" class="k">ROLE</text>
+    <text x="200" y="158" class="v">full-stack / js / ts ecosystem</text>
+  </g>
+
+  <g class="rise d3">
+    <line x1="64" y1="176" x2="856" y2="176" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="64" y="206" class="k">CRAFT</text>
+    <text x="200" y="206" class="v">figma -&gt; next.js -&gt; nestjs -&gt; postgres</text>
+  </g>
+
+  <g class="rise d4">
+    <line x1="64" y1="224" x2="856" y2="224" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="64" y="254" class="k">BASE</text>
+    <text x="200" y="254" class="v">praha / czechia</text>
+    <text x="520" y="254" class="k">STATUS</text>
+    <circle class="pulse" cx="610" cy="249" r="5" fill="#888888"/>
+    <text x="624" y="254" class="v">offline</text>
+  </g>
+
+  <g class="rise d5">
+    <line x1="64" y1="272" x2="856" y2="272" stroke="#2a2a2a" stroke-width="1"/>
+  </g>
+
+  <g class="rise d6">
+    <text x="64" y="298" class="tag">Builds modern web &amp; mobile experiences end-to-end.</text>
+    <text x="64" y="318" class="tag">Clean code. Sharp UI. Ships that hold up.</text>
+  </g>
 </svg>

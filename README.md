@@ -2,6 +2,10 @@
   <img src="./assets/header.svg" width="100%" alt="Peter Dinis - Full-Stack Developer" />
 </p>
 
+<p align="center">
+  <img src="./assets/loading.svg" width="260" alt="Jumping PC loading" />
+</p>
+
 ---
 
 ## About

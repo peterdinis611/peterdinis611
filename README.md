@@ -3,13 +3,18 @@
 </p>
 
 <p align="center">
-  <a href="https://dinis-portfolio.vercel.app/">Portfolio</a>
-  /
-  <a href="https://www.linkedin.com/in/peter-dinis-58520b214/">LinkedIn</a>
-  /
-  <a href="https://www.instagram.com/peterdinis1/">Instagram</a>
-  /
-  <a href="https://github.com/peterdinis611">GitHub</a>
+  <a href="https://dinis-portfolio.vercel.app/">
+    <img src="https://img.shields.io/badge/Portfolio-111111?style=for-the-badge&logo=vercel&logoColor=4c8bff" alt="Portfolio" />
+  </a>
+  <a href="https://www.linkedin.com/in/peter-dinis-58520b214/">
+    <img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=linkedin&logoColor=4c8bff" alt="LinkedIn" />
+  </a>
+  <a href="https://www.instagram.com/peterdinis1/">
+    <img src="https://img.shields.io/badge/Instagram-111111?style=for-the-badge&logo=instagram&logoColor=4c8bff" alt="Instagram" />
+  </a>
+  <a href="https://github.com/peterdinis611">
+    <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=4c8bff" alt="GitHub" />
+  </a>
 </p>
 
 ---
@@ -48,11 +53,6 @@
 
 <p align="center">
   <img src="./assets/contrib-invaders.svg" width="100%" alt="Contrib Invaders" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=peterdinis611&show_icons=true&theme=dark&bg_color=111111&title_color=4c8bff&icon_color=4c8bff&text_color=eeeeee&hide_border=true" height="165" alt="GitHub stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=peterdinis611&theme=dark&background=111111&ring=4c8bff&fire=4c8bff&currStreakLabel=4c8bff&hide_border=true" height="165" alt="GitHub streak" />
 </p>
 
 ---

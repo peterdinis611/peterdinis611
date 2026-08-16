@@ -1,45 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-label="Contact">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" role="img" aria-label="Contact">
   <defs>
     <style>
       <![CDATA[
-        .badge {
+        .eyebrow {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.14em;
-          fill: #111111;
+          font-size: 11px;
+          letter-spacing: 0.28em;
+          fill: #4c8bff;
         }
         .title {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 22px;
+          font-size: 34px;
+          font-weight: 700;
+          letter-spacing: -0.04em;
           fill: #eeeeee;
         }
-        .dim {
+        .sub {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 13px;
+          font-size: 14px;
           fill: #888888;
+        }
+        .badge {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.16em;
+          fill: #111111;
         }
         .link {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 15px;
+          font-size: 14px;
+          letter-spacing: 0.04em;
           fill: #4c8bff;
+        }
+        .meta {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 12px;
+          letter-spacing: 0.18em;
+          fill: #888888;
+        }
+        .pulse { animation: blink 1.4s ease-in-out infinite; }
+        .rise {
+          opacity: 0;
+          animation: up 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .d1 { animation-delay: 0.05s; }
+        .d2 { animation-delay: 0.15s; }
+        .d3 { animation-delay: 0.25s; }
+        .d4 { animation-delay: 0.35s; }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.35; }
+        }
+        @keyframes up {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
         }
       ]]>
     </style>
   </defs>
 
-  <rect width="920" height="200" fill="#111111"/>
-  <rect x="18" y="18" width="884" height="164" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-  <rect x="18" y="18" width="884" height="4" fill="#4c8bff"/>
+  <rect width="920" height="240" fill="#111111"/>
+  <rect x="18" y="18" width="884" height="204" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <rect x="18" y="18" width="5" height="204" fill="#4c8bff"/>
 
-  <rect x="48" y="48" width="150" height="28" fill="#4c8bff"/>
-  <text x="62" y="67" class="badge">STATUS OFFLINE</text>
+  <!-- corner marks -->
+  <path d="M40 48 H58 M40 48 V66" fill="none" stroke="#4c8bff" stroke-width="2"/>
+  <path d="M880 48 H862 M880 48 V66" fill="none" stroke="#4c8bff" stroke-width="2"/>
+  <path d="M40 192 H58 M40 192 V174" fill="none" stroke="#4c8bff" stroke-width="2"/>
+  <path d="M880 192 H862 M880 192 V174" fill="none" stroke="#4c8bff" stroke-width="2"/>
 
-  <rect x="214" y="48" width="178" height="28" fill="#4c8bff"/>
-  <text x="228" y="67" class="badge">PROJECTS ON PAUSE</text>
+  <g class="rise d1">
+    <text x="64" y="64" class="eyebrow">CONTACT // CHANNEL</text>
+  </g>
 
-  <text x="48" y="112" class="title">Portfolio is live</text>
-  <text x="48" y="138" class="dim">Not taking new work right now</text>
-  <text x="48" y="166" class="link">dinis-portfolio.vercel.app</text>
-  <text x="720" y="166" class="dim">BARDEJOV / SK</text>
+  <g class="rise d2">
+    <text x="64" y="112" class="title">Portfolio is live</text>
+    <text x="64" y="140" class="sub">Not taking new work right now</text>
+  </g>
+
+  <g class="rise d3">
+    <rect x="64" y="162" width="148" height="26" fill="#4c8bff"/>
+    <circle class="pulse" cx="80" cy="175" r="4" fill="#111111"/>
+    <text x="94" y="179" class="badge">STATUS OFFLINE</text>
+
+    <rect x="224" y="162" width="168" height="26" fill="none" stroke="#4c8bff" stroke-width="2"/>
+    <text x="240" y="179" class="link">PROJECTS ON PAUSE</text>
+  </g>
+
+  <g class="rise d4">
+    <text x="520" y="112" class="meta">OPEN LINK</text>
+    <text x="520" y="140" class="link">dinis-portfolio.vercel.app</text>
+    <text x="520" y="178" class="meta">BARDEJOV / SK</text>
+  </g>
 </svg>

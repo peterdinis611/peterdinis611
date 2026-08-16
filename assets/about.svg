@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-label="About">
+  <defs>
+    <style>
+      <![CDATA[
+        .k {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 12px;
+          letter-spacing: 0.12em;
+          fill: #4c8bff;
+          text-transform: uppercase;
+        }
+        .v {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 15px;
+          fill: #eeeeee;
+        }
+        .tag {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 13px;
+          fill: #888888;
+        }
+        .pulse { animation: blink 1.4s ease-in-out infinite; }
+        .rise { opacity: 0; animation: up 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .d1 { animation-delay: 0.05s; }
+        .d2 { animation-delay: 0.12s; }
+        .d3 { animation-delay: 0.19s; }
+        .d4 { animation-delay: 0.26s; }
+        .d5 { animation-delay: 0.33s; }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.35; }
+        }
+        @keyframes up {
+          from { opacity: 0; transform: translateX(-10px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+      ]]>
+    </style>
+  </defs>
+
+  <rect width="920" height="300" fill="#111111"/>
+  <rect x="18" y="18" width="884" height="210" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <rect x="18" y="18" width="5" height="210" fill="#4c8bff"/>
+
+  <g class="rise d1">
+    <text x="48" y="58" class="k">WHOAMI</text>
+    <text x="180" y="58" class="v">peter dinis</text>
+  </g>
+  <g class="rise d2">
+    <text x="48" y="96" class="k">ROLE</text>
+    <text x="180" y="96" class="v">full-stack / js / ts ecosystem</text>
+  </g>
+  <g class="rise d3">
+    <text x="48" y="134" class="k">CRAFT</text>
+    <text x="180" y="134" class="v">figma -&gt; next.js -&gt; nestjs -&gt; postgres</text>
+  </g>
+  <g class="rise d4">
+    <text x="48" y="172" class="k">BASE</text>
+    <text x="180" y="172" class="v">bardejov / slovakia</text>
+  </g>
+  <g class="rise d5">
+    <text x="48" y="210" class="k">STATUS</text>
+    <circle class="pulse" cx="188" cy="205" r="5" fill="#4c8bff"/>
+    <text x="204" y="210" class="v">offline - not taking work right now</text>
+  </g>
+
+  <text x="18" y="268" class="tag">Builds modern web &amp; mobile experiences end-to-end.</text>
+  <text x="18" y="290" class="tag">Clean code. Sharp UI. Ships that hold up.</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 200" role="img" aria-label="Contact">
+  <defs>
+    <style>
+      <![CDATA[
+        .badge {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          fill: #111111;
+        }
+        .title {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 22px;
+          fill: #eeeeee;
+        }
+        .dim {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 13px;
+          fill: #888888;
+        }
+        .link {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 15px;
+          fill: #4c8bff;
+        }
+      ]]>
+    </style>
+  </defs>
+
+  <rect width="920" height="200" fill="#111111"/>
+  <rect x="18" y="18" width="884" height="164" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <rect x="18" y="18" width="884" height="4" fill="#4c8bff"/>
+
+  <rect x="48" y="48" width="150" height="28" fill="#4c8bff"/>
+  <text x="62" y="67" class="badge">STATUS OFFLINE</text>
+
+  <rect x="214" y="48" width="178" height="28" fill="#4c8bff"/>
+  <text x="228" y="67" class="badge">PROJECTS ON PAUSE</text>
+
+  <text x="48" y="112" class="title">Portfolio is live</text>
+  <text x="48" y="138" class="dim">Not taking new work right now</text>
+  <text x="48" y="166" class="link">dinis-portfolio.vercel.app</text>
+  <text x="720" y="166" class="dim">BARDEJOV / SK</text>
+</svg>

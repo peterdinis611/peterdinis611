@@ -1,0 +1,28 @@
+name: Refresh Contrib Invaders
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Generate SVG from contribution graph
+        run: node scripts/generate-contrib-invaders.mjs ${{ github.repository_owner }}
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/contrib-invaders.svg
+          git diff --staged --quiet || git commit -m "chore: refresh contrib invaders animation"
+          git push

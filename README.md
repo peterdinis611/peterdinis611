@@ -1,22 +1,14 @@
-# Peter Dinis
-
 <p align="center">
-  <img src="./assets/profile.jpg" width="140" alt="Peter Dinis" />
+  <img src="./assets/header.svg" width="100%" alt="Peter Dinis - Full-Stack Developer" />
 </p>
 
 <p align="center">
-  <b>Full-Stack Developer</b> / JavaScript / TypeScript<br/>
-  Bardejov, Slovakia
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/STATUS-NOT_AVAILABLE_FOR_PROJECTS-4c8bff?style=for-the-badge&labelColor=111111" alt="Not available" />
-</p>
-
-<p align="center">
-  <a href="https://dinis-portfolio.vercel.app/">Portfolio</a> /
-  <a href="https://www.linkedin.com/in/peter-dinis-58520b214/">LinkedIn</a> /
-  <a href="https://www.instagram.com/peterdinis1/">Instagram</a> /
+  <a href="https://dinis-portfolio.vercel.app/">Portfolio</a>
+  /
+  <a href="https://www.linkedin.com/in/peter-dinis-58520b214/">LinkedIn</a>
+  /
+  <a href="https://www.instagram.com/peterdinis1/">Instagram</a>
+  /
   <a href="https://github.com/peterdinis611">GitHub</a>
 </p>
 

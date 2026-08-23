@@ -1,21 +1,29 @@
 #!/usr/bin/env node
 /**
- * Builds assets/contrib-invaders.svg from the public GitHub contributions calendar.
+ * Builds activity-aware profile SVGs from the public GitHub contributions calendar.
  * Usage: node scripts/generate-contrib-invaders.mjs [username]
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const username = process.argv[2] || 'peterdinis611'; 
+const username = process.argv[2] || 'peterdinis611';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const out = join(root, 'assets', 'contrib-invaders.svg');
+const invadersOut = join(root, 'assets', 'contrib-invaders.svg');
+const tunedOut = join(root, 'assets', 'tuned.svg');
 
 const res = await fetch(`https://github.com/users/${username}/contributions`, {
   headers: { 'User-Agent': 'contrib-invaders-generator' },
 });
 if (!res.ok) throw new Error(`Failed to fetch contributions: ${res.status}`);
 const html = await res.text();
+
+const totalMatch = html.match(
+  /js-contribution-activity-description[\s\S]*?(\d[\d,]*)\s*contributions/i,
+);
+const totalContributions = totalMatch
+  ? Number(totalMatch[1].replace(/,/g, ''))
+  : null;
 
 const cells = [];
 const re =
@@ -36,6 +44,92 @@ if (cells.length < 50) {
 const filled = cells.filter((c) => c.level > 0);
 if (!filled.length) throw new Error('No filled contribution days found');
 
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const daysAgo = (n) => {
+  const d = new Date(today);
+  d.setDate(d.getDate() - n);
+  return d;
+};
+
+const recentWindowDays = 28;
+const recentCutoff = daysAgo(recentWindowDays);
+const recentFilled = filled.filter((c) => new Date(`${c.date}T00:00:00`) >= recentCutoff);
+const recentIntensity = recentFilled.reduce((sum, c) => sum + c.level, 0);
+const intensityScore = filled.reduce((sum, c) => sum + c.level, 0);
+
+const sortedDates = [...new Set(filled.map((c) => c.date))].sort();
+let streak = 0;
+for (let offset = 0; offset < 400; offset += 1) {
+  const expected = daysAgo(offset).toISOString().slice(0, 10);
+  if (sortedDates.includes(expected)) streak += 1;
+  else if (offset === 0) continue;
+  else break;
+}
+
+function getPaceTier(recentDays, recentLevelSum) {
+  if (recentDays === 0) {
+    return {
+      id: 'idle',
+      label: 'IDLE',
+      lines: [
+        'keeping the toolchain sharp',
+        'small fixes between bigger builds',
+        'reading docs and cleaning edges',
+        'ready when velocity picks up',
+      ],
+    };
+  }
+  if (recentDays <= 6 || recentLevelSum <= 8) {
+    return {
+      id: 'warming',
+      label: 'WARMING UP',
+      lines: [
+        'product UIs that feel intentional',
+        'steady commits on focused scopes',
+        'APIs that stay boringly reliable',
+        'collaboration over ceremony',
+      ],
+    };
+  }
+  if (recentDays <= 14 || recentLevelSum <= 24) {
+    return {
+      id: 'steady',
+      label: 'STEADY PACE',
+      lines: [
+        'shipping in small, safe slices',
+        'product UIs that feel intentional',
+        'APIs that stay boringly reliable',
+        'mobile with React Native when needed',
+      ],
+    };
+  }
+  if (recentDays <= 22 || recentLevelSum <= 40) {
+    return {
+      id: 'active',
+      label: 'ACTIVE SPRINT',
+      lines: [
+        'high commit velocity this month',
+        'refactors that stay boringly safe',
+        'features from sketch to production',
+        'pairing when it beats async',
+      ],
+    };
+  }
+  return {
+    id: 'storm',
+    label: 'COMMIT STORM',
+    lines: [
+      'multiple repos in parallel',
+      'deep refactors under time pressure',
+      'shipping features end to end',
+      'tests before the victory lap',
+    ],
+  };
+}
+
+const tier = getPaceTier(recentFilled.length, recentIntensity);
+
 const CELL = 14;
 const GAP = 4;
 const STEP = CELL + GAP;
@@ -47,19 +141,29 @@ const maxWeek = Math.max(...filled.map((c) => c.week));
 const visible = cells.filter((c) => c.week >= minWeek && c.week <= maxWeek);
 const W = PAD_X * 2 + (maxWeek - minWeek + 1) * STEP + 20;
 const H = 280;
+
 const levelFill = {
   0: '#1a1a1a',
-  1: '#4c8bff',
-  2: '#4c8bff',
+  1: '#2a4570',
+  2: '#3d66a8',
   3: '#4c8bff',
-  4: '#4c8bff',
+  4: '#7cabff',
 };
+
+const paceBoost = Math.min(1, recentIntensity / 36);
+let HIT = 0.72 - paceBoost * 0.34;
+const SETUP = Math.max(0.55, 0.95 - paceBoost * 0.25);
 const targets = [...filled]
   .filter((c) => c.week >= minWeek)
   .sort((a, b) => a.week - b.week || b.dow - a.dow);
-const HIT = 0.48;
-const SETUP = 0.9;
-const totalDur = SETUP + targets.length * HIT + 1.2;
+
+const maxLoop = tier.id === 'storm' ? 28 : tier.id === 'active' ? 30 : 34;
+let totalDur = SETUP + targets.length * HIT + 1.2;
+if (totalDur > maxLoop) {
+  HIT = Math.max(0.28, (maxLoop - SETUP - 1.2) / targets.length);
+  totalDur = SETUP + targets.length * HIT + 1.2;
+}
+
 const cellX = (week) => PAD_X + (week - minWeek) * STEP;
 const cellY = (dow) => PAD_Y + dow * STEP;
 
@@ -75,17 +179,23 @@ targets.forEach((t, i) => {
   const cx = cellX(t.week) + CELL / 2;
   const cy = cellY(t.dow) + CELL / 2;
   const shipX = cx - 10;
+  const laserWidth = t.level >= 3 ? 3 : 2;
+  const laserColor = levelFill[t.level] || '#4c8bff';
   css += `.t${i}{animation:die${i} ${totalDur}s linear infinite;transform-box:fill-box;transform-origin:center}
 @keyframes die${i}{0%,${(endPct - 0.05).toFixed(2)}%{opacity:1;transform:scale(1)}${endPct.toFixed(2)}%{opacity:.2;transform:scale(1.8)}${(endPct + 0.8).toFixed(2)}%,100%{opacity:0;transform:scale(0)}}
 .l${i}{transform-origin:${cx}px ${SHIP_Y}px;animation:shoot${i} ${totalDur}s linear infinite}
 @keyframes shoot${i}{0%,${startPct.toFixed(2)}%{transform:scaleY(0);opacity:0}${((start + HIT * 0.25) / totalDur * 100).toFixed(2)}%{transform:scaleY(1);opacity:1}${endPct.toFixed(2)}%{transform:scaleY(1);opacity:1}${((hitAt + 0.15) / totalDur * 100).toFixed(2)}%,100%{transform:scaleY(0);opacity:0}}`;
-  lasers += `<rect class="l${i}" x="${(cx - 1).toFixed(1)}" y="${cy.toFixed(1)}" width="2" height="${Math.max(8, SHIP_Y - cy).toFixed(1)}" fill="#4c8bff"/>`;
+  lasers += `<rect class="l${i}" x="${(cx - laserWidth / 2).toFixed(1)}" y="${cy.toFixed(1)}" width="${laserWidth}" height="${Math.max(8, SHIP_Y - cy).toFixed(1)}" fill="${laserColor}"/>`;
   shipKeys.push(
     `${((start + HIT * 0.15) / totalDur * 100).toFixed(2)}%{transform:translate(${shipX.toFixed(1)}px,${SHIP_Y}px)}`,
   );
 });
 shipKeys.push(`100%{transform:translate(${PAD_X}px,${SHIP_Y}px)}`);
 css += `.ship{animation:cruise ${totalDur}s linear infinite}@keyframes cruise{${shipKeys.join('')}}`;
+
+if (tier.id === 'storm' || tier.id === 'active') {
+  css += `.pulse{animation:pulse ${Math.max(0.8, totalDur / 6).toFixed(2)}s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}`;
+}
 
 let grid = '';
 for (const c of visible) {
@@ -100,29 +210,121 @@ for (const c of visible) {
   }
 }
 
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Shoot filled GitHub contribution days">
+const contributionLabel =
+  totalContributions != null
+    ? `${totalContributions} CONTRIBUTIONS / 12 MO`
+    : `${intensityScore} INTENSITY PTS / 12 MO`;
+const scoreLine = `${targets.length} ACTIVE DAYS / ${recentFilled.length} IN LAST ${recentWindowDays}D`;
+const footerLine =
+  streak > 1
+    ? `STREAK ${streak}D  /  PACE ${tier.label}  /  DARKER CELL = MORE COMMITS`
+    : `PACE ${tier.label}  /  DARKER CELL = MORE COMMITS THAT DAY`;
+
+const invadersSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Shoot filled GitHub contribution days">
   <defs><style><![CDATA[
     .bg{fill:#111111}
-    .hud{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.16em;fill:#4c8bff}
-    .score{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.1em;fill:#4c8bff}
+    .hud{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.12em;fill:#4c8bff}
+    .score{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.08em;fill:#4c8bff}
     ${css}
   ]]></style></defs>
   <rect width="${W}" height="${H}" class="bg"/>
   <rect x="1" y="1" width="${W - 2}" height="${H - 2}" fill="none" stroke="#2a2a2a" stroke-width="2"/>
-  <text x="20" y="28" class="hud">CONTRIB INVASION</text>
-  <text x="${W - 210}" y="28" class="score">HIT ${targets.length} FILLED DAYS</text>
+  <text x="20" y="24" class="hud">CONTRIB INVASION</text>
+  <text x="20" y="40" class="score">${contributionLabel}</text>
+  <text x="${W - 20}" y="32" class="score" text-anchor="end">${scoreLine}</text>
   ${grid}
   ${lasers}
-  <g class="ship">
+  <g class="ship${tier.id === 'storm' || tier.id === 'active' ? ' pulse' : ''}">
     <rect x="8" y="0" width="4" height="4" fill="#4c8bff"/>
     <rect x="4" y="4" width="12" height="4" fill="#4c8bff"/>
     <rect x="0" y="8" width="20" height="4" fill="#4c8bff"/>
     <rect x="0" y="12" width="4" height="4" fill="#4c8bff"/>
     <rect x="16" y="12" width="4" height="4" fill="#4c8bff"/>
   </g>
-  <text x="20" y="${H - 14}" class="hud">EMPTY CELLS STAY  /  FILLED CELLS FALL</text>
+  <text x="20" y="${H - 14}" class="hud">${footerLine}</text>
 </svg>`;
 
-mkdirSync(dirname(out), { recursive: true });
-writeFileSync(out, svg);
-console.log(`Wrote ${out} (${targets.length} targets, ${totalDur.toFixed(1)}s loop)`);
+function escapeXml(value) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+const tunedLines = tier.lines.map((line, index) => {
+  const y = 92 + index * 34;
+  const delay = 0.05 + index * 0.09;
+  const num = String(index + 1).padStart(2, '0');
+  return `<g class="rise d${index + 2}">
+    <text x="48" y="${y}" class="num">${num}</text>
+    <rect x="84" y="${y - 8}" width="14" height="3" fill="#4c8bff"/>
+    <text x="110" y="${y}" class="line">${escapeXml(line)}</text>
+  </g>`;
+});
+
+const tunedMeta =
+  totalContributions != null
+    ? `${totalContributions} commits / 12 mo  /  ${recentFilled.length} active days / last ${recentWindowDays}d  /  ${tier.label}`
+    : `${recentFilled.length} active days / last ${recentWindowDays}d  /  ${tier.label}`;
+
+const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" role="img" aria-label="Currently tuned for">
+  <defs>
+    <style>
+      <![CDATA[
+        .title {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 12px;
+          letter-spacing: 0.2em;
+          fill: #4c8bff;
+        }
+        .meta {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 10px;
+          letter-spacing: 0.08em;
+          fill: #888888;
+        }
+        .num {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 12px;
+          fill: #4c8bff;
+        }
+        .line {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 15px;
+          fill: #eeeeee;
+        }
+        .rise { opacity: 0; animation: up 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .d1 { animation-delay: 0.05s; }
+        .d2 { animation-delay: 0.14s; }
+        .d3 { animation-delay: 0.23s; }
+        .d4 { animation-delay: 0.32s; }
+        .d5 { animation-delay: 0.41s; }
+        @keyframes up {
+          from { opacity: 0; transform: translateX(-10px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+      ]]>
+    </style>
+  </defs>
+
+  <rect width="920" height="220" fill="#111111"/>
+  <rect x="18" y="18" width="884" height="184" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <rect x="18" y="18" width="5" height="184" fill="#4c8bff"/>
+
+  <text class="rise d1 title" x="48" y="52">CURRENTLY TUNED FOR</text>
+  <text class="rise d2 meta" x="48" y="68">${escapeXml(tunedMeta)}</text>
+
+  ${tunedLines.join('\n  ')}
+</svg>`;
+
+mkdirSync(dirname(invadersOut), { recursive: true });
+writeFileSync(invadersOut, invadersSvg);
+writeFileSync(tunedOut, tunedSvg);
+
+console.log(
+  `Wrote ${invadersOut} (${targets.length} targets, ${totalDur.toFixed(1)}s loop, pace ${tier.label})`,
+);
+console.log(
+  `Wrote ${tunedOut} (${totalContributions ?? intensityScore} contributions, ${recentFilled.length} recent days)`,
+);

@@ -8,6 +8,12 @@
           letter-spacing: 0.2em;
           fill: #4c8bff;
         }
+        .meta {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 10px;
+          letter-spacing: 0.08em;
+          fill: #888888;
+        }
         .num {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
           font-size: 12px;
@@ -37,25 +43,26 @@
   <rect x="18" y="18" width="5" height="184" fill="#4c8bff"/>
 
   <text class="rise d1 title" x="48" y="52">CURRENTLY TUNED FOR</text>
+  <text class="rise d2 meta" x="48" y="68">545 commits / 12 mo  /  9 active days / last 28d  /  STEADY PACE</text>
 
   <g class="rise d2">
     <text x="48" y="92" class="num">01</text>
     <rect x="84" y="84" width="14" height="3" fill="#4c8bff"/>
-    <text x="110" y="92" class="line">product UIs that feel intentional</text>
+    <text x="110" y="92" class="line">shipping in small, safe slices</text>
   </g>
   <g class="rise d3">
     <text x="48" y="126" class="num">02</text>
     <rect x="84" y="118" width="14" height="3" fill="#4c8bff"/>
-    <text x="110" y="126" class="line">APIs that stay boringly reliable</text>
+    <text x="110" y="126" class="line">product UIs that feel intentional</text>
   </g>
   <g class="rise d4">
     <text x="48" y="160" class="num">03</text>
     <rect x="84" y="152" width="14" height="3" fill="#4c8bff"/>
-    <text x="110" y="160" class="line">mobile with React Native when needed</text>
+    <text x="110" y="160" class="line">APIs that stay boringly reliable</text>
   </g>
   <g class="rise d5">
     <text x="48" y="194" class="num">04</text>
     <rect x="84" y="186" width="14" height="3" fill="#4c8bff"/>
-    <text x="110" y="194" class="line">collaboration over ceremony</text>
+    <text x="110" y="194" class="line">mobile with React Native when needed</text>
   </g>
 </svg>

@@ -12,6 +12,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const invadersOut = join(root, 'assets', 'contrib-invasion.svg');
 const invadersLegacyOut = join(root, 'assets', 'contrib-invaders.svg');
 const tunedOut = join(root, 'assets', 'tuned.svg');
+const tunedSignalOut = join(root, 'assets', 'tuned-signal.svg');
 
 const res = await fetch(`https://github.com/users/${username}/contributions`, {
   headers: { 'User-Agent': 'contrib-invaders-generator' },
@@ -265,76 +266,159 @@ function escapeXml(value) {
     .replace(/"/g, '&quot;');
 }
 
-const tunedLines = tier.lines.map((line, index) => {
-  const y = 92 + index * 34;
-  const delay = 0.05 + index * 0.09;
-  const num = String(index + 1).padStart(2, '0');
-  return `<g class="rise d${index + 2}">
-    <text x="48" y="${y}" class="num">${num}</text>
-    <rect x="84" y="${y - 8}" width="14" height="3" fill="#4c8bff"/>
-    <text x="110" y="${y}" class="line">${escapeXml(line)}</text>
+const intensityPct = Math.max(
+  8,
+  Math.min(100, Math.round((recentIntensity / 40) * 100)),
+);
+const barWidth = Math.round(260 * (intensityPct / 100));
+
+const focusItems = tier.lines
+  .map((line, index) => {
+    const y = 86 + index * 44;
+    const num = String(index + 1).padStart(2, '0');
+    const delayClass = `f${index + 1}`;
+    return `<g class="rise ${delayClass}">
+    <text x="372" y="${y}" class="idx">${num}</text>
+    <rect x="408" y="${y - 12}" width="2" height="18" fill="#4c8bff"/>
+    <text x="428" y="${y}" class="focus">${escapeXml(line)}</text>
+    <line x1="428" y1="${y + 14}" x2="884" y2="${y + 14}" stroke="#2a2a2a" stroke-width="1"/>
   </g>`;
-});
+  })
+  .join('\n  ');
 
-const tunedMeta =
-  totalContributions != null
-    ? `${totalContributions} commits / 12 mo  /  ${recentFilled.length} active days / last ${recentWindowDays}d  /  ${tier.label}`
-    : `${recentFilled.length} active days / last ${recentWindowDays}d  /  ${tier.label}`;
-
-const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" role="img" aria-label="Currently tuned for">
+const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" role="img" aria-label="Currently tuned for — ${tier.label}">
   <defs>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.8" fill="#242424"/>
+    </pattern>
     <style>
       <![CDATA[
-        .title {
+        .eyebrow {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 12px;
-          letter-spacing: 0.2em;
+          font-size: 11px;
+          letter-spacing: 0.28em;
           fill: #4c8bff;
         }
-        .meta {
+        .pace {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 30px;
+          font-weight: 700;
+          letter-spacing: -0.04em;
+          fill: #eeeeee;
+        }
+        .label {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
           font-size: 10px;
-          letter-spacing: 0.08em;
+          letter-spacing: 0.18em;
           fill: #888888;
         }
-        .num {
+        .stat {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 12px;
+          font-size: 28px;
+          font-weight: 700;
+          letter-spacing: -0.04em;
+          fill: #eeeeee;
+        }
+        .unit {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 11px;
+          letter-spacing: 0.06em;
+          fill: #888888;
+        }
+        .idx {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 13px;
           fill: #4c8bff;
         }
-        .line {
+        .focus {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
           font-size: 15px;
           fill: #eeeeee;
         }
-        .rise { opacity: 0; animation: up 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-        .d1 { animation-delay: 0.05s; }
-        .d2 { animation-delay: 0.14s; }
-        .d3 { animation-delay: 0.23s; }
-        .d4 { animation-delay: 0.32s; }
-        .d5 { animation-delay: 0.41s; }
+        .live {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 10px;
+          letter-spacing: 0.22em;
+          fill: #4c8bff;
+        }
+        .rise {
+          opacity: 0;
+          animation: up 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .d1 { animation-delay: 0.04s; }
+        .d2 { animation-delay: 0.12s; }
+        .d3 { animation-delay: 0.2s; }
+        .f1 { animation-delay: 0.18s; }
+        .f2 { animation-delay: 0.26s; }
+        .f3 { animation-delay: 0.34s; }
+        .f4 { animation-delay: 0.42s; }
+        .bar {
+          transform-box: fill-box;
+          transform-origin: left center;
+          animation: fill 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+        }
+        .blink {
+          animation: blink 1.6s ease-in-out infinite;
+        }
         @keyframes up {
-          from { opacity: 0; transform: translateX(-10px); }
-          to { opacity: 1; transform: translateX(0); }
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fill {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.3; }
         }
       ]]>
     </style>
   </defs>
 
-  <rect width="920" height="220" fill="#111111"/>
-  <rect x="18" y="18" width="884" height="184" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-  <rect x="18" y="18" width="5" height="184" fill="#4c8bff"/>
+  <rect width="920" height="290" fill="#111111"/>
+  <rect width="920" height="290" fill="url(#dots)" opacity="0.7"/>
+  <rect x="16" y="16" width="888" height="258" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <rect x="16" y="16" width="4" height="258" fill="#4c8bff"/>
 
-  <text class="rise d1 title" x="48" y="52">CURRENTLY TUNED FOR</text>
-  <text class="rise d2 meta" x="48" y="68">${escapeXml(tunedMeta)}</text>
+  <g class="rise d1">
+    <text x="44" y="50" class="eyebrow">TUNING SIGNAL</text>
+    <circle class="blink" cx="196" cy="46" r="4" fill="#4c8bff"/>
+    <text x="208" y="50" class="live">LIVE</text>
+    <text x="44" y="96" class="pace">${escapeXml(tier.label)}</text>
+  </g>
 
-  ${tunedLines.join('\n  ')}
+  <g class="rise d2">
+    <text x="44" y="122" class="label">INTENSITY</text>
+    <rect x="44" y="132" width="260" height="10" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+    <rect class="bar" x="44" y="132" width="${barWidth}" height="10" fill="#4c8bff"/>
+  </g>
+
+  <g class="rise d3">
+    <rect x="44" y="160" width="280" height="58" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="60" y="182" class="label">COMMITS / 12 MO</text>
+    <text x="60" y="206" class="stat">${totalContributions != null ? totalContributions : intensityScore}</text>
+
+    <rect x="44" y="230" width="134" height="30" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="56" y="250" class="unit">${recentFilled.length} active / 28d</text>
+
+    <rect x="190" y="230" width="134" height="30" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="202" y="250" class="unit">streak ${streak}d</text>
+  </g>
+
+  <line x1="352" y1="36" x2="352" y2="254" stroke="#2a2a2a" stroke-width="1"/>
+
+  <g class="rise d2">
+    <text x="372" y="50" class="eyebrow">FOCUSED ON</text>
+  </g>
+  ${focusItems}
 </svg>`;
 
 mkdirSync(dirname(invadersOut), { recursive: true });
 writeFileSync(invadersOut, invadersSvg);
 writeFileSync(invadersLegacyOut, invadersSvg);
 writeFileSync(tunedOut, tunedSvg);
+writeFileSync(tunedSignalOut, tunedSvg);
 
 console.log(
   `Wrote ${invadersOut} (${targets.length} targets, ${totalDur.toFixed(1)}s loop, pace ${tier.label})`,

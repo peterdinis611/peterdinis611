@@ -23,7 +23,7 @@
 ## Currently tuned for
 
 <p align="center">
-  <img src="./assets/tuned.svg" width="100%" alt="Currently tuned for" />
+  <img src="./assets/tuned-signal.svg" width="100%" alt="Currently tuned for" />
 </p>
 
 ---

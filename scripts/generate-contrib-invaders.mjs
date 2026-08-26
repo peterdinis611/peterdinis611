@@ -303,7 +303,7 @@ const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" 
         }
         .pace {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 36px;
+          font-size: 32px;
           font-weight: 700;
           letter-spacing: -0.05em;
           fill: #eeeeee;
@@ -316,14 +316,14 @@ const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" 
         }
         .mega {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 56px;
+          font-size: 48px;
           font-weight: 700;
           letter-spacing: -0.06em;
           fill: #eeeeee;
         }
         .metric {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 22px;
+          font-size: 18px;
           font-weight: 700;
           letter-spacing: -0.04em;
           fill: #eeeeee;
@@ -402,28 +402,28 @@ const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" 
     <text x="44" y="48" class="eyebrow">TUNING SIGNAL</text>
     <circle class="blink" cx="198" cy="44" r="4" fill="#4c8bff"/>
     <text x="210" y="48" class="live">LIVE</text>
-    <text x="44" y="92" class="pace">${escapeXml(tier.label)}</text>
+    <text x="44" y="88" class="pace">${escapeXml(tier.label)}</text>
   </g>
 
   <g class="rise d2">
-    <text x="44" y="168" class="mega">${commitValue}</text>
-    <text x="44" y="192" class="label">COMMITS / 12 MONTHS</text>
+    <text x="44" y="156" class="mega">${commitValue}</text>
+    <text x="44" y="178" class="label">COMMITS / 12 MONTHS</text>
   </g>
 
   <g class="rise d3">
-    <line x1="44" y1="210" x2="324" y2="210" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="44" y="236" class="metric">${recentFilled.length}</text>
-    <text x="44" y="254" class="unit">active / 28d</text>
-    <line x1="148" y1="224" x2="148" y2="254" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="168" y="236" class="metric">${streak}</text>
-    <text x="168" y="254" class="unit">day streak</text>
+    <text x="44" y="206" class="label">INTENSITY</text>
+    <text x="324" y="206" class="pct" text-anchor="end">${intensityPct}%</text>
+    <rect x="44" y="214" width="280" height="6" fill="#111111"/>
+    <rect class="bar" x="44" y="214" width="${barWidth}" height="6" fill="#4c8bff"/>
   </g>
 
   <g class="rise d4">
-    <rect x="44" y="118" width="280" height="6" fill="#111111"/>
-    <rect class="bar" x="44" y="118" width="${barWidth}" height="6" fill="#4c8bff"/>
-    <text x="44" y="140" class="label">INTENSITY</text>
-    <text x="324" y="140" class="pct" text-anchor="end">${intensityPct}%</text>
+    <line x1="44" y1="236" x2="324" y2="236" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="44" y="258" class="metric">${recentFilled.length}</text>
+    <text x="78" y="258" class="unit">active / 28d</text>
+    <line x1="188" y1="246" x2="188" y2="262" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="204" y="258" class="metric">${streak}</text>
+    <text x="236" y="258" class="unit">day streak</text>
   </g>
 
   <line x1="352" y1="36" x2="352" y2="254" stroke="#2a2a2a" stroke-width="1"/>

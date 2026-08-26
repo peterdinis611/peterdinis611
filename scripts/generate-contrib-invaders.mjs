@@ -134,13 +134,17 @@ const CELL = 14;
 const GAP = 4;
 const STEP = CELL + GAP;
 const PAD_X = 40;
-const PAD_Y = 52;
-const SHIP_Y = 220;
+const PAD_Y = 72;
+const SHIP_Y = 236;
+const FOOTER_Y = 268;
 const minWeek = Math.max(0, Math.min(...filled.map((c) => c.week)) - 1);
 const maxWeek = Math.max(...filled.map((c) => c.week));
 const visible = cells.filter((c) => c.week >= minWeek && c.week <= maxWeek);
-const W = PAD_X * 2 + (maxWeek - minWeek + 1) * STEP + 20;
-const H = 280;
+const W = Math.max(
+  520,
+  PAD_X * 2 + (maxWeek - minWeek + 1) * STEP + 20,
+);
+const H = 300;
 
 const levelFill = {
   0: '#1a1a1a',
@@ -210,28 +214,25 @@ for (const c of visible) {
   }
 }
 
-const contributionLabel =
-  totalContributions != null
-    ? `${totalContributions} CONTRIBUTIONS / 12 MO`
-    : `${intensityScore} INTENSITY PTS / 12 MO`;
-const scoreLine = `${targets.length} ACTIVE DAYS / ${recentFilled.length} IN LAST ${recentWindowDays}D`;
-const footerLine =
-  streak > 1
-    ? `STREAK ${streak}D  /  PACE ${tier.label}  /  DARKER CELL = MORE COMMITS`
-    : `PACE ${tier.label}  /  DARKER CELL = MORE COMMITS THAT DAY`;
+const contribCount =
+  totalContributions != null ? String(totalContributions) : String(intensityScore);
+const footerLeft =
+  streak > 1 ? `STREAK ${streak}D  /  ${tier.label}` : tier.label;
+const footerRight = 'BRIGHTER = MORE COMMITS';
 
 const invadersSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Shoot filled GitHub contribution days">
   <defs><style><![CDATA[
     .bg{fill:#111111}
-    .hud{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.12em;fill:#4c8bff}
+    .hud{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.16em;fill:#4c8bff}
     .score{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.08em;fill:#4c8bff}
+    .meta{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.06em;fill:#888888}
     ${css}
   ]]></style></defs>
   <rect width="${W}" height="${H}" class="bg"/>
   <rect x="1" y="1" width="${W - 2}" height="${H - 2}" fill="none" stroke="#2a2a2a" stroke-width="2"/>
-  <text x="20" y="24" class="hud">CONTRIB INVASION</text>
-  <text x="20" y="40" class="score">${contributionLabel}</text>
-  <text x="${W - 20}" y="32" class="score" text-anchor="end">${scoreLine}</text>
+  <text x="20" y="28" class="hud">CONTRIB INVASION</text>
+  <text x="${W - 20}" y="28" class="score" text-anchor="end">${tier.label}</text>
+  <text x="20" y="48" class="meta">${contribCount} COMMITS / 12MO   ·   ${targets.length} ACTIVE DAYS   ·   ${recentFilled.length} IN LAST ${recentWindowDays}D</text>
   ${grid}
   ${lasers}
   <g class="ship${tier.id === 'storm' || tier.id === 'active' ? ' pulse' : ''}">
@@ -241,7 +242,8 @@ const invadersSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} $
     <rect x="0" y="12" width="4" height="4" fill="#4c8bff"/>
     <rect x="16" y="12" width="4" height="4" fill="#4c8bff"/>
   </g>
-  <text x="20" y="${H - 14}" class="hud">${footerLine}</text>
+  <text x="20" y="${FOOTER_Y}" class="meta">${footerLeft}</text>
+  <text x="${W - 20}" y="${FOOTER_Y}" class="meta" text-anchor="end">${footerRight}</text>
 </svg>`;
 
 function escapeXml(value) {

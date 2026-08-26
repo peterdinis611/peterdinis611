@@ -43,7 +43,7 @@
   <rect x="18" y="18" width="5" height="184" fill="#4c8bff"/>
 
   <text class="rise d1 title" x="48" y="52">CURRENTLY TUNED FOR</text>
-  <text class="rise d2 meta" x="48" y="68">545 commits / 12 mo  /  9 active days / last 28d  /  STEADY PACE</text>
+  <text class="rise d2 meta" x="48" y="68">636 commits / 12 mo  /  11 active days / last 28d  /  STEADY PACE</text>
 
   <g class="rise d2">
     <text x="48" y="92" class="num">01</text>

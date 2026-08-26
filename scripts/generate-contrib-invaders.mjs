@@ -270,7 +270,9 @@ const intensityPct = Math.max(
   8,
   Math.min(100, Math.round((recentIntensity / 40) * 100)),
 );
-const barWidth = Math.round(260 * (intensityPct / 100));
+const barWidth = Math.round(280 * (intensityPct / 100));
+const commitValue =
+  totalContributions != null ? String(totalContributions) : String(intensityScore);
 
 const focusItems = tier.lines
   .map((line, index) => {
@@ -301,20 +303,27 @@ const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" 
         }
         .pace {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 30px;
+          font-size: 36px;
           font-weight: 700;
-          letter-spacing: -0.04em;
+          letter-spacing: -0.05em;
           fill: #eeeeee;
         }
         .label {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
           font-size: 10px;
-          letter-spacing: 0.18em;
+          letter-spacing: 0.2em;
           fill: #888888;
         }
-        .stat {
+        .mega {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 28px;
+          font-size: 56px;
+          font-weight: 700;
+          letter-spacing: -0.06em;
+          fill: #eeeeee;
+        }
+        .metric {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 22px;
           font-weight: 700;
           letter-spacing: -0.04em;
           fill: #eeeeee;
@@ -322,8 +331,14 @@ const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" 
         .unit {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
           font-size: 11px;
-          letter-spacing: 0.06em;
+          letter-spacing: 0.08em;
           fill: #888888;
+        }
+        .pct {
+          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+          font-size: 11px;
+          letter-spacing: 0.08em;
+          fill: #4c8bff;
         }
         .idx {
           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -348,6 +363,7 @@ const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" 
         .d1 { animation-delay: 0.04s; }
         .d2 { animation-delay: 0.12s; }
         .d3 { animation-delay: 0.2s; }
+        .d4 { animation-delay: 0.28s; }
         .f1 { animation-delay: 0.18s; }
         .f2 { animation-delay: 0.26s; }
         .f3 { animation-delay: 0.34s; }
@@ -381,29 +397,33 @@ const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" 
   <rect x="16" y="16" width="888" height="258" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
   <rect x="16" y="16" width="4" height="258" fill="#4c8bff"/>
 
+  <!-- left: open telemetry, no stacked boxes -->
   <g class="rise d1">
-    <text x="44" y="50" class="eyebrow">TUNING SIGNAL</text>
-    <circle class="blink" cx="196" cy="46" r="4" fill="#4c8bff"/>
-    <text x="208" y="50" class="live">LIVE</text>
-    <text x="44" y="96" class="pace">${escapeXml(tier.label)}</text>
+    <text x="44" y="48" class="eyebrow">TUNING SIGNAL</text>
+    <circle class="blink" cx="198" cy="44" r="4" fill="#4c8bff"/>
+    <text x="210" y="48" class="live">LIVE</text>
+    <text x="44" y="92" class="pace">${escapeXml(tier.label)}</text>
   </g>
 
   <g class="rise d2">
-    <text x="44" y="122" class="label">INTENSITY</text>
-    <rect x="44" y="132" width="260" height="10" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <rect class="bar" x="44" y="132" width="${barWidth}" height="10" fill="#4c8bff"/>
+    <text x="44" y="168" class="mega">${commitValue}</text>
+    <text x="44" y="192" class="label">COMMITS / 12 MONTHS</text>
   </g>
 
   <g class="rise d3">
-    <rect x="44" y="160" width="280" height="58" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="60" y="182" class="label">COMMITS / 12 MO</text>
-    <text x="60" y="206" class="stat">${totalContributions != null ? totalContributions : intensityScore}</text>
+    <line x1="44" y1="210" x2="324" y2="210" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="44" y="236" class="metric">${recentFilled.length}</text>
+    <text x="44" y="254" class="unit">active / 28d</text>
+    <line x1="148" y1="224" x2="148" y2="254" stroke="#2a2a2a" stroke-width="1"/>
+    <text x="168" y="236" class="metric">${streak}</text>
+    <text x="168" y="254" class="unit">day streak</text>
+  </g>
 
-    <rect x="44" y="230" width="134" height="30" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="56" y="250" class="unit">${recentFilled.length} active / 28d</text>
-
-    <rect x="190" y="230" width="134" height="30" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="202" y="250" class="unit">streak ${streak}d</text>
+  <g class="rise d4">
+    <rect x="44" y="118" width="280" height="6" fill="#111111"/>
+    <rect class="bar" x="44" y="118" width="${barWidth}" height="6" fill="#4c8bff"/>
+    <text x="44" y="140" class="label">INTENSITY</text>
+    <text x="324" y="140" class="pct" text-anchor="end">${intensityPct}%</text>
   </g>
 
   <line x1="352" y1="36" x2="352" y2="254" stroke="#2a2a2a" stroke-width="1"/>

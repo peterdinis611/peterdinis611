@@ -7,7 +7,7 @@
 ## About
 
 <p align="center">
-  <img src="./assets/about.svg" width="100%" alt="About" />
+  <img src="./assets/about-dossier.svg" width="100%" alt="About" />
 </p>
 
 ---

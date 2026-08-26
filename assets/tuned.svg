@@ -1,165 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" role="img" aria-label="Currently tuned for — STEADY PACE">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" role="img" aria-label="Currently tuned for STEADY PACE">
   <defs>
     <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
       <circle cx="1" cy="1" r="0.8" fill="#242424"/>
     </pattern>
     <style>
       <![CDATA[
-        .eyebrow {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 11px;
-          letter-spacing: 0.28em;
-          fill: #4c8bff;
-        }
-        .pace {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 32px;
-          font-weight: 700;
-          letter-spacing: -0.05em;
-          fill: #eeeeee;
-        }
-        .label {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 10px;
-          letter-spacing: 0.2em;
-          fill: #888888;
-        }
-        .mega {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 48px;
-          font-weight: 700;
-          letter-spacing: -0.06em;
-          fill: #eeeeee;
-        }
-        .metric {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 18px;
-          font-weight: 700;
-          letter-spacing: -0.04em;
-          fill: #eeeeee;
-        }
-        .unit {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 11px;
-          letter-spacing: 0.08em;
-          fill: #888888;
-        }
-        .pct {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 11px;
-          letter-spacing: 0.08em;
-          fill: #4c8bff;
-        }
-        .idx {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 13px;
-          fill: #4c8bff;
-        }
-        .focus {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 15px;
-          fill: #eeeeee;
-        }
-        .live {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 10px;
-          letter-spacing: 0.22em;
-          fill: #4c8bff;
-        }
-        .rise {
-          opacity: 0;
-          animation: up 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-        .d1 { animation-delay: 0.04s; }
-        .d2 { animation-delay: 0.12s; }
-        .d3 { animation-delay: 0.2s; }
-        .d4 { animation-delay: 0.28s; }
-        .f1 { animation-delay: 0.18s; }
-        .f2 { animation-delay: 0.26s; }
-        .f3 { animation-delay: 0.34s; }
-        .f4 { animation-delay: 0.42s; }
-        .bar {
-          transform-box: fill-box;
-          transform-origin: left center;
-          animation: fill 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
-        }
-        .blink {
-          animation: blink 1.6s ease-in-out infinite;
-        }
-        @keyframes up {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fill {
-          from { transform: scaleX(0); }
-          to { transform: scaleX(1); }
-        }
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
-        }
+        .eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.28em;fill:#4c8bff}
+        .pace{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:30px;font-weight:700;letter-spacing:-.04em;fill:#eeeeee}
+        .label{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.18em;fill:#888888}
+        .mega{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:44px;font-weight:700;letter-spacing:-.05em;fill:#eeeeee}
+        .metric{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:18px;font-weight:700;letter-spacing:-.03em;fill:#eeeeee}
+        .unit{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.06em;fill:#888888}
+        .pct{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.08em;fill:#4c8bff}
+        .idx{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;fill:#4c8bff}
+        .focus{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;fill:#eeeeee}
+        .live{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.22em;fill:#4c8bff}
+        .blink{animation:blink 1.6s ease-in-out infinite}
+        .bar{transform-box:fill-box;transform-origin:left center;animation:fill 1s cubic-bezier(.22,1,.36,1) .2s both}
+        @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
       ]]>
     </style>
   </defs>
 
   <rect width="920" height="290" fill="#111111"/>
-  <rect width="920" height="290" fill="url(#dots)" opacity="0.7"/>
+  <rect width="920" height="290" fill="url(#dots)" opacity="0.65"/>
   <rect x="16" y="16" width="888" height="258" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
   <rect x="16" y="16" width="4" height="258" fill="#4c8bff"/>
 
-  <!-- left: open telemetry, no stacked boxes -->
-  <g class="rise d1">
-    <text x="44" y="48" class="eyebrow">TUNING SIGNAL</text>
-    <circle class="blink" cx="198" cy="44" r="4" fill="#4c8bff"/>
-    <text x="210" y="48" class="live">LIVE</text>
-    <text x="44" y="88" class="pace">STEADY PACE</text>
-  </g>
+  <!-- LEFT COLUMN: fixed y bands, no overlap -->
+  <text x="44" y="46" class="eyebrow">TUNING SIGNAL</text>
+  <circle class="blink" cx="198" cy="42" r="4" fill="#4c8bff"/>
+  <text x="210" y="46" class="live">LIVE</text>
+  <text x="44" y="84" class="pace">STEADY PACE</text>
 
-  <g class="rise d2">
-    <text x="44" y="156" class="mega">636</text>
-    <text x="44" y="178" class="label">COMMITS / 12 MONTHS</text>
-  </g>
+  <text x="44" y="148" class="mega">636</text>
+  <text x="44" y="170" class="label">COMMITS / 12 MONTHS</text>
 
-  <g class="rise d3">
-    <text x="44" y="206" class="label">INTENSITY</text>
-    <text x="324" y="206" class="pct" text-anchor="end">75%</text>
-    <rect x="44" y="214" width="280" height="6" fill="#111111"/>
-    <rect class="bar" x="44" y="214" width="210" height="6" fill="#4c8bff"/>
-  </g>
+  <text x="44" y="200" class="label">INTENSITY</text>
+  <text x="324" y="200" class="pct" text-anchor="end">75%</text>
+  <rect x="44" y="208" width="280" height="6" fill="#111111"/>
+  <rect class="bar" x="44" y="208" width="210" height="6" fill="#4c8bff"/>
 
-  <g class="rise d4">
-    <line x1="44" y1="236" x2="324" y2="236" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="44" y="258" class="metric">11</text>
-    <text x="78" y="258" class="unit">active / 28d</text>
-    <line x1="188" y1="246" x2="188" y2="262" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="204" y="258" class="metric">6</text>
-    <text x="236" y="258" class="unit">day streak</text>
-  </g>
+  <line x1="44" y1="230" x2="324" y2="230" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="44" y="256" class="metric">11</text>
+  <text x="78" y="256" class="unit">active / 28d</text>
+  <line x1="188" y1="244" x2="188" y2="260" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="204" y="256" class="metric">6</text>
+  <text x="236" y="256" class="unit">day streak</text>
 
   <line x1="352" y1="36" x2="352" y2="254" stroke="#2a2a2a" stroke-width="1"/>
 
-  <g class="rise d2">
-    <text x="372" y="50" class="eyebrow">FOCUSED ON</text>
-  </g>
-  <g class="rise f1">
+  <text x="372" y="46" class="eyebrow">FOCUSED ON</text>
+  <g>
     <text x="372" y="86" class="idx">01</text>
     <rect x="408" y="74" width="2" height="18" fill="#4c8bff"/>
     <text x="428" y="86" class="focus">shipping in small, safe slices</text>
     <line x1="428" y1="100" x2="884" y2="100" stroke="#2a2a2a" stroke-width="1"/>
   </g>
-  <g class="rise f2">
+  <g>
     <text x="372" y="130" class="idx">02</text>
     <rect x="408" y="118" width="2" height="18" fill="#4c8bff"/>
     <text x="428" y="130" class="focus">product UIs that feel intentional</text>
     <line x1="428" y1="144" x2="884" y2="144" stroke="#2a2a2a" stroke-width="1"/>
   </g>
-  <g class="rise f3">
+  <g>
     <text x="372" y="174" class="idx">03</text>
     <rect x="408" y="162" width="2" height="18" fill="#4c8bff"/>
     <text x="428" y="174" class="focus">APIs that stay boringly reliable</text>
     <line x1="428" y1="188" x2="884" y2="188" stroke="#2a2a2a" stroke-width="1"/>
   </g>
-  <g class="rise f4">
+  <g>
     <text x="372" y="218" class="idx">04</text>
     <rect x="408" y="206" width="2" height="18" fill="#4c8bff"/>
     <text x="428" y="218" class="focus">mobile with React Native when needed</text>

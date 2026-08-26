@@ -9,7 +9,8 @@ import { fileURLToPath } from 'node:url';
 
 const username = process.argv[2] || 'peterdinis611';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const invadersOut = join(root, 'assets', 'contrib-invaders.svg');
+const invadersOut = join(root, 'assets', 'contrib-invasion.svg');
+const invadersLegacyOut = join(root, 'assets', 'contrib-invaders.svg');
 const tunedOut = join(root, 'assets', 'tuned.svg');
 
 const res = await fetch(`https://github.com/users/${username}/contributions`, {
@@ -133,18 +134,25 @@ const tier = getPaceTier(recentFilled.length, recentIntensity);
 const CELL = 14;
 const GAP = 4;
 const STEP = CELL + GAP;
-const PAD_X = 40;
-const PAD_Y = 72;
-const SHIP_Y = 236;
-const FOOTER_Y = 268;
+const HEADER_H = 58;
+const FOOTER_H = 36;
+const GRID_ROWS = 7;
+const GRID_H = GRID_ROWS * STEP - GAP;
+const SHIP_H = 28;
+const PAD_X = 28;
+const PAD_TOP = HEADER_H + 14;
+const PAD_BOTTOM = FOOTER_H + SHIP_H + 18;
+
 const minWeek = Math.max(0, Math.min(...filled.map((c) => c.week)) - 1);
 const maxWeek = Math.max(...filled.map((c) => c.week));
-const visible = cells.filter((c) => c.week >= minWeek && c.week <= maxWeek);
-const W = Math.max(
-  520,
-  PAD_X * 2 + (maxWeek - minWeek + 1) * STEP + 20,
-);
-const H = 300;
+const weekCount = maxWeek - minWeek + 1;
+const gridW = weekCount * STEP - GAP;
+const W = Math.max(640, gridW + PAD_X * 2);
+const H = PAD_TOP + GRID_H + PAD_BOTTOM;
+const gridOriginX = Math.round((W - gridW) / 2);
+const PAD_Y = PAD_TOP;
+const SHIP_Y = PAD_TOP + GRID_H + 18;
+const FOOTER_Y = H - 14;
 
 const levelFill = {
   0: '#1a1a1a',
@@ -157,6 +165,7 @@ const levelFill = {
 const paceBoost = Math.min(1, recentIntensity / 36);
 let HIT = 0.72 - paceBoost * 0.34;
 const SETUP = Math.max(0.55, 0.95 - paceBoost * 0.25);
+const visible = cells.filter((c) => c.week >= minWeek && c.week <= maxWeek);
 const targets = [...filled]
   .filter((c) => c.week >= minWeek)
   .sort((a, b) => a.week - b.week || b.dow - a.dow);
@@ -168,12 +177,12 @@ if (totalDur > maxLoop) {
   totalDur = SETUP + targets.length * HIT + 1.2;
 }
 
-const cellX = (week) => PAD_X + (week - minWeek) * STEP;
+const cellX = (week) => gridOriginX + (week - minWeek) * STEP;
 const cellY = (dow) => PAD_Y + dow * STEP;
 
 let css = '';
 let lasers = '';
-const shipKeys = [`0%{transform:translate(${PAD_X}px,${SHIP_Y}px)}`];
+const shipKeys = [`0%{transform:translate(${gridOriginX}px,${SHIP_Y}px)}`];
 
 targets.forEach((t, i) => {
   const start = SETUP + i * HIT;
@@ -194,7 +203,7 @@ targets.forEach((t, i) => {
     `${((start + HIT * 0.15) / totalDur * 100).toFixed(2)}%{transform:translate(${shipX.toFixed(1)}px,${SHIP_Y}px)}`,
   );
 });
-shipKeys.push(`100%{transform:translate(${PAD_X}px,${SHIP_Y}px)}`);
+shipKeys.push(`100%{transform:translate(${gridOriginX}px,${SHIP_Y}px)}`);
 css += `.ship{animation:cruise ${totalDur}s linear infinite}@keyframes cruise{${shipKeys.join('')}}`;
 
 if (tier.id === 'storm' || tier.id === 'active') {
@@ -216,23 +225,24 @@ for (const c of visible) {
 
 const contribCount =
   totalContributions != null ? String(totalContributions) : String(intensityScore);
-const footerLeft =
-  streak > 1 ? `STREAK ${streak}D  /  ${tier.label}` : tier.label;
-const footerRight = 'BRIGHTER = MORE COMMITS';
+const statsLine = `${contribCount} commits / yr   ·   ${targets.length} active days   ·   ${recentFilled.length} last ${recentWindowDays}d`;
+const footerLeft = streak > 1 ? `streak ${streak}d` : 'no streak';
+const footerRight = 'brighter = more commits';
 
 const invadersSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Shoot filled GitHub contribution days">
   <defs><style><![CDATA[
     .bg{fill:#111111}
-    .hud{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.16em;fill:#4c8bff}
-    .score{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.08em;fill:#4c8bff}
-    .meta{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.06em;fill:#888888}
+    .hud{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;letter-spacing:.18em;fill:#4c8bff}
+    .pace{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.14em;fill:#4c8bff}
+    .meta{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.04em;fill:#888888}
     ${css}
   ]]></style></defs>
   <rect width="${W}" height="${H}" class="bg"/>
   <rect x="1" y="1" width="${W - 2}" height="${H - 2}" fill="none" stroke="#2a2a2a" stroke-width="2"/>
-  <text x="20" y="28" class="hud">CONTRIB INVASION</text>
-  <text x="${W - 20}" y="28" class="score" text-anchor="end">${tier.label}</text>
-  <text x="20" y="48" class="meta">${contribCount} COMMITS / 12MO   ·   ${targets.length} ACTIVE DAYS   ·   ${recentFilled.length} IN LAST ${recentWindowDays}D</text>
+  <rect x="2" y="2" width="${W - 4}" height="${HEADER_H}" fill="#111111"/>
+  <text x="24" y="28" class="hud">CONTRIB INVASION</text>
+  <text x="${W - 24}" y="28" class="pace" text-anchor="end">${tier.label}</text>
+  <text x="24" y="48" class="meta">${statsLine}</text>
   ${grid}
   ${lasers}
   <g class="ship${tier.id === 'storm' || tier.id === 'active' ? ' pulse' : ''}">
@@ -242,8 +252,9 @@ const invadersSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} $
     <rect x="0" y="12" width="4" height="4" fill="#4c8bff"/>
     <rect x="16" y="12" width="4" height="4" fill="#4c8bff"/>
   </g>
-  <text x="20" y="${FOOTER_Y}" class="meta">${footerLeft}</text>
-  <text x="${W - 20}" y="${FOOTER_Y}" class="meta" text-anchor="end">${footerRight}</text>
+  <rect x="2" y="${H - FOOTER_H}" width="${W - 4}" height="${FOOTER_H - 2}" fill="#111111"/>
+  <text x="24" y="${FOOTER_Y}" class="meta">${footerLeft}</text>
+  <text x="${W - 24}" y="${FOOTER_Y}" class="meta" text-anchor="end">${footerRight}</text>
 </svg>`;
 
 function escapeXml(value) {
@@ -322,11 +333,13 @@ const tunedSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" 
 
 mkdirSync(dirname(invadersOut), { recursive: true });
 writeFileSync(invadersOut, invadersSvg);
+writeFileSync(invadersLegacyOut, invadersSvg);
 writeFileSync(tunedOut, tunedSvg);
 
 console.log(
   `Wrote ${invadersOut} (${targets.length} targets, ${totalDur.toFixed(1)}s loop, pace ${tier.label})`,
 );
+console.log(`Also wrote ${invadersLegacyOut}`);
 console.log(
   `Wrote ${tunedOut} (${totalContributions ?? intensityScore} contributions, ${recentFilled.length} recent days)`,
 );

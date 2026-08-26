@@ -31,7 +31,7 @@
 ## Contrib Invaders
 
 <p align="center">
-  <img src="./assets/contrib-invaders.svg" width="100%" alt="Contrib Invaders" />
+  <img src="./assets/contrib-invasion.svg" width="100%" alt="Contrib Invaders" />
 </p>
 
 ---

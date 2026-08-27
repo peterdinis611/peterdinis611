@@ -48,4 +48,7 @@
   <a href="mailto:peterdinis611@gmail.com">
     <img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=4c8bff" alt="Email peterdinis611@gmail.com" />
   </a>
+  <a href="https://www.linkedin.com/in/peter-dinis-58520b214/">
+    <img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=linkedin&logoColor=4c8bff" alt="LinkedIn Peter Dinis" />
+  </a>
 </p>

@@ -17,8 +17,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
       - name: Generate activity-aware profile SVGs
-        run: node scripts/generate-contrib-invaders.mjs ${{ github.repository_owner }}
+        run: npm run generate -- ${{ github.repository_owner }}
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"

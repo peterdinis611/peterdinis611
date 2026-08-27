@@ -1,0 +1,27 @@
+{
+  "name": "peterdinis611",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "GitHub profile README for peterdinis611",
+  "scripts": {
+    "generate": "tsx scripts/generate-contrib-invaders.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "check": "biome check . && tsc --noEmit",
+    "check:fix": "biome check --write .",
+    "biome:ci": "biome ci ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.10",
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

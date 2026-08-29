@@ -34,19 +34,19 @@
   <text x="210" y="46" class="live">LIVE</text>
   <text x="44" y="84" class="pace">STEADY PACE</text>
 
-  <text x="44" y="148" class="mega">645</text>
+  <text x="44" y="148" class="mega">697</text>
   <text x="44" y="170" class="label">COMMITS / 12 MONTHS</text>
 
   <text x="44" y="200" class="label">INTENSITY</text>
-  <text x="324" y="200" class="pct" text-anchor="end">73%</text>
+  <text x="324" y="200" class="pct" text-anchor="end">90%</text>
   <rect x="44" y="208" width="280" height="6" fill="#111111"/>
-  <rect class="bar" x="44" y="208" width="204" height="6" fill="#4c8bff"/>
+  <rect class="bar" x="44" y="208" width="252" height="6" fill="#4c8bff"/>
 
   <line x1="44" y1="230" x2="324" y2="230" stroke="#2a2a2a" stroke-width="1"/>
-  <text x="44" y="256" class="metric">12</text>
+  <text x="44" y="256" class="metric">14</text>
   <text x="78" y="256" class="unit">active / 28d</text>
   <line x1="188" y1="244" x2="188" y2="260" stroke="#2a2a2a" stroke-width="1"/>
-  <text x="204" y="256" class="metric">7</text>
+  <text x="204" y="256" class="metric">9</text>
   <text x="236" y="256" class="unit">day streak</text>
 
   <line x1="352" y1="36" x2="352" y2="254" stroke="#2a2a2a" stroke-width="1"/>

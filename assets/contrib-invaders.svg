@@ -5,166 +5,166 @@
     .pace{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.14em;fill:#4c8bff}
     .meta{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.04em;fill:#888888}
     .t0{animation:die0 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die0{0%,4.09%{opacity:1;transform:scale(1)}4.17%{opacity:.35;transform:scale(1.55)}5.70%,100%{opacity:1;transform:scale(1)}}
+@keyframes die0{0%,4.09%{opacity:1;transform:scale(1)}4.17%{opacity:.35;transform:scale(1.7)}4.98%,100%{opacity:0;transform:scale(0)}}
 .l0{opacity:0;transform-origin:185px 212px;animation:shoot0 22.42s linear infinite}
 @keyframes shoot0{0%,3.12%{transform:scaleY(0);opacity:0}3.55%{transform:scaleY(1);opacity:1}4.17%{transform:scaleY(1);opacity:1}4.84%,100%{transform:scaleY(0);opacity:0}}.t1{animation:die1 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die1{0%,5.79%{opacity:1;transform:scale(1)}5.87%{opacity:.35;transform:scale(1.55)}7.39%,100%{opacity:1;transform:scale(1)}}
+@keyframes die1{0%,5.79%{opacity:1;transform:scale(1)}5.87%{opacity:.35;transform:scale(1.7)}6.67%,100%{opacity:0;transform:scale(0)}}
 .l1{opacity:0;transform-origin:203px 212px;animation:shoot1 22.42s linear infinite}
 @keyframes shoot1{0%,4.82%{transform:scaleY(0);opacity:0}5.24%{transform:scaleY(1);opacity:1}5.87%{transform:scaleY(1);opacity:1}6.54%,100%{transform:scaleY(0);opacity:0}}.t2{animation:die2 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die2{0%,7.48%{opacity:1;transform:scale(1)}7.56%{opacity:.35;transform:scale(1.55)}9.09%,100%{opacity:1;transform:scale(1)}}
+@keyframes die2{0%,7.48%{opacity:1;transform:scale(1)}7.56%{opacity:.35;transform:scale(1.7)}8.37%,100%{opacity:0;transform:scale(0)}}
 .l2{opacity:0;transform-origin:203px 212px;animation:shoot2 22.42s linear infinite}
 @keyframes shoot2{0%,6.51%{transform:scaleY(0);opacity:0}6.94%{transform:scaleY(1);opacity:1}7.56%{transform:scaleY(1);opacity:1}8.23%,100%{transform:scaleY(0);opacity:0}}.t3{animation:die3 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die3{0%,9.18%{opacity:1;transform:scale(1)}9.26%{opacity:.35;transform:scale(1.55)}10.78%,100%{opacity:1;transform:scale(1)}}
+@keyframes die3{0%,9.18%{opacity:1;transform:scale(1)}9.26%{opacity:.35;transform:scale(1.7)}10.06%,100%{opacity:0;transform:scale(0)}}
 .l3{opacity:0;transform-origin:221px 212px;animation:shoot3 22.42s linear infinite}
 @keyframes shoot3{0%,8.21%{transform:scaleY(0);opacity:0}8.63%{transform:scaleY(1);opacity:1}9.26%{transform:scaleY(1);opacity:1}9.93%,100%{transform:scaleY(0);opacity:0}}.t4{animation:die4 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die4{0%,10.87%{opacity:1;transform:scale(1)}10.95%{opacity:.35;transform:scale(1.55)}12.48%,100%{opacity:1;transform:scale(1)}}
+@keyframes die4{0%,10.87%{opacity:1;transform:scale(1)}10.95%{opacity:.35;transform:scale(1.7)}11.76%,100%{opacity:0;transform:scale(0)}}
 .l4{opacity:0;transform-origin:221px 212px;animation:shoot4 22.42s linear infinite}
 @keyframes shoot4{0%,9.90%{transform:scaleY(0);opacity:0}10.33%{transform:scaleY(1);opacity:1}10.95%{transform:scaleY(1);opacity:1}11.62%,100%{transform:scaleY(0);opacity:0}}.t5{animation:die5 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die5{0%,12.57%{opacity:1;transform:scale(1)}12.65%{opacity:.35;transform:scale(1.55)}14.17%,100%{opacity:1;transform:scale(1)}}
+@keyframes die5{0%,12.57%{opacity:1;transform:scale(1)}12.65%{opacity:.35;transform:scale(1.7)}13.45%,100%{opacity:0;transform:scale(0)}}
 .l5{opacity:0;transform-origin:221px 212px;animation:shoot5 22.42s linear infinite}
 @keyframes shoot5{0%,11.60%{transform:scaleY(0);opacity:0}12.02%{transform:scaleY(1);opacity:1}12.65%{transform:scaleY(1);opacity:1}13.32%,100%{transform:scaleY(0);opacity:0}}.t6{animation:die6 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die6{0%,14.26%{opacity:1;transform:scale(1)}14.34%{opacity:.35;transform:scale(1.55)}15.87%,100%{opacity:1;transform:scale(1)}}
+@keyframes die6{0%,14.26%{opacity:1;transform:scale(1)}14.34%{opacity:.35;transform:scale(1.7)}15.15%,100%{opacity:0;transform:scale(0)}}
 .l6{opacity:0;transform-origin:239px 212px;animation:shoot6 22.42s linear infinite}
 @keyframes shoot6{0%,13.29%{transform:scaleY(0);opacity:0}13.72%{transform:scaleY(1);opacity:1}14.34%{transform:scaleY(1);opacity:1}15.01%,100%{transform:scaleY(0);opacity:0}}.t7{animation:die7 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die7{0%,15.96%{opacity:1;transform:scale(1)}16.04%{opacity:.35;transform:scale(1.55)}17.56%,100%{opacity:1;transform:scale(1)}}
+@keyframes die7{0%,15.96%{opacity:1;transform:scale(1)}16.04%{opacity:.35;transform:scale(1.7)}16.84%,100%{opacity:0;transform:scale(0)}}
 .l7{opacity:0;transform-origin:239px 212px;animation:shoot7 22.42s linear infinite}
 @keyframes shoot7{0%,14.99%{transform:scaleY(0);opacity:0}15.41%{transform:scaleY(1);opacity:1}16.04%{transform:scaleY(1);opacity:1}16.71%,100%{transform:scaleY(0);opacity:0}}.t8{animation:die8 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die8{0%,17.65%{opacity:1;transform:scale(1)}17.73%{opacity:.35;transform:scale(1.55)}19.26%,100%{opacity:1;transform:scale(1)}}
+@keyframes die8{0%,17.65%{opacity:1;transform:scale(1)}17.73%{opacity:.35;transform:scale(1.7)}18.54%,100%{opacity:0;transform:scale(0)}}
 .l8{opacity:0;transform-origin:239px 212px;animation:shoot8 22.42s linear infinite}
 @keyframes shoot8{0%,16.68%{transform:scaleY(0);opacity:0}17.11%{transform:scaleY(1);opacity:1}17.73%{transform:scaleY(1);opacity:1}18.40%,100%{transform:scaleY(0);opacity:0}}.t9{animation:die9 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die9{0%,19.35%{opacity:1;transform:scale(1)}19.43%{opacity:.35;transform:scale(1.55)}20.95%,100%{opacity:1;transform:scale(1)}}
+@keyframes die9{0%,19.35%{opacity:1;transform:scale(1)}19.43%{opacity:.35;transform:scale(1.7)}20.23%,100%{opacity:0;transform:scale(0)}}
 .l9{opacity:0;transform-origin:257px 212px;animation:shoot9 22.42s linear infinite}
 @keyframes shoot9{0%,18.38%{transform:scaleY(0);opacity:0}18.80%{transform:scaleY(1);opacity:1}19.43%{transform:scaleY(1);opacity:1}20.10%,100%{transform:scaleY(0);opacity:0}}.t10{animation:die10 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die10{0%,21.04%{opacity:1;transform:scale(1)}21.12%{opacity:.35;transform:scale(1.55)}22.65%,100%{opacity:1;transform:scale(1)}}
+@keyframes die10{0%,21.04%{opacity:1;transform:scale(1)}21.12%{opacity:.35;transform:scale(1.7)}21.93%,100%{opacity:0;transform:scale(0)}}
 .l10{opacity:0;transform-origin:257px 212px;animation:shoot10 22.42s linear infinite}
 @keyframes shoot10{0%,20.07%{transform:scaleY(0);opacity:0}20.50%{transform:scaleY(1);opacity:1}21.12%{transform:scaleY(1);opacity:1}21.79%,100%{transform:scaleY(0);opacity:0}}.t11{animation:die11 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die11{0%,22.74%{opacity:1;transform:scale(1)}22.82%{opacity:.35;transform:scale(1.55)}24.34%,100%{opacity:1;transform:scale(1)}}
+@keyframes die11{0%,22.74%{opacity:1;transform:scale(1)}22.82%{opacity:.35;transform:scale(1.7)}23.62%,100%{opacity:0;transform:scale(0)}}
 .l11{opacity:0;transform-origin:257px 212px;animation:shoot11 22.42s linear infinite}
 @keyframes shoot11{0%,21.77%{transform:scaleY(0);opacity:0}22.19%{transform:scaleY(1);opacity:1}22.82%{transform:scaleY(1);opacity:1}23.49%,100%{transform:scaleY(0);opacity:0}}.t12{animation:die12 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die12{0%,24.43%{opacity:1;transform:scale(1)}24.51%{opacity:.35;transform:scale(1.55)}26.04%,100%{opacity:1;transform:scale(1)}}
+@keyframes die12{0%,24.43%{opacity:1;transform:scale(1)}24.51%{opacity:.35;transform:scale(1.7)}25.31%,100%{opacity:0;transform:scale(0)}}
 .l12{opacity:0;transform-origin:257px 212px;animation:shoot12 22.42s linear infinite}
 @keyframes shoot12{0%,23.46%{transform:scaleY(0);opacity:0}23.88%{transform:scaleY(1);opacity:1}24.51%{transform:scaleY(1);opacity:1}25.18%,100%{transform:scaleY(0);opacity:0}}.t13{animation:die13 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die13{0%,26.13%{opacity:1;transform:scale(1)}26.21%{opacity:.35;transform:scale(1.55)}27.73%,100%{opacity:1;transform:scale(1)}}
+@keyframes die13{0%,26.13%{opacity:1;transform:scale(1)}26.21%{opacity:.35;transform:scale(1.7)}27.01%,100%{opacity:0;transform:scale(0)}}
 .l13{opacity:0;transform-origin:257px 212px;animation:shoot13 22.42s linear infinite}
 @keyframes shoot13{0%,25.16%{transform:scaleY(0);opacity:0}25.58%{transform:scaleY(1);opacity:1}26.21%{transform:scaleY(1);opacity:1}26.88%,100%{transform:scaleY(0);opacity:0}}.t14{animation:die14 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die14{0%,27.82%{opacity:1;transform:scale(1)}27.90%{opacity:.35;transform:scale(1.55)}29.43%,100%{opacity:1;transform:scale(1)}}
+@keyframes die14{0%,27.82%{opacity:1;transform:scale(1)}27.90%{opacity:.35;transform:scale(1.7)}28.70%,100%{opacity:0;transform:scale(0)}}
 .l14{opacity:0;transform-origin:275px 212px;animation:shoot14 22.42s linear infinite}
 @keyframes shoot14{0%,26.85%{transform:scaleY(0);opacity:0}27.27%{transform:scaleY(1);opacity:1}27.90%{transform:scaleY(1);opacity:1}28.57%,100%{transform:scaleY(0);opacity:0}}.t15{animation:die15 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die15{0%,29.52%{opacity:1;transform:scale(1)}29.60%{opacity:.35;transform:scale(1.55)}31.12%,100%{opacity:1;transform:scale(1)}}
+@keyframes die15{0%,29.52%{opacity:1;transform:scale(1)}29.60%{opacity:.35;transform:scale(1.7)}30.40%,100%{opacity:0;transform:scale(0)}}
 .l15{opacity:0;transform-origin:275px 212px;animation:shoot15 22.42s linear infinite}
 @keyframes shoot15{0%,28.55%{transform:scaleY(0);opacity:0}28.97%{transform:scaleY(1);opacity:1}29.60%{transform:scaleY(1);opacity:1}30.27%,100%{transform:scaleY(0);opacity:0}}.t16{animation:die16 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die16{0%,31.21%{opacity:1;transform:scale(1)}31.29%{opacity:.35;transform:scale(1.55)}32.82%,100%{opacity:1;transform:scale(1)}}
+@keyframes die16{0%,31.21%{opacity:1;transform:scale(1)}31.29%{opacity:.35;transform:scale(1.7)}32.09%,100%{opacity:0;transform:scale(0)}}
 .l16{opacity:0;transform-origin:275px 212px;animation:shoot16 22.42s linear infinite}
 @keyframes shoot16{0%,30.24%{transform:scaleY(0);opacity:0}30.66%{transform:scaleY(1);opacity:1}31.29%{transform:scaleY(1);opacity:1}31.96%,100%{transform:scaleY(0);opacity:0}}.t17{animation:die17 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die17{0%,32.91%{opacity:1;transform:scale(1)}32.99%{opacity:.35;transform:scale(1.55)}34.51%,100%{opacity:1;transform:scale(1)}}
+@keyframes die17{0%,32.91%{opacity:1;transform:scale(1)}32.99%{opacity:.35;transform:scale(1.7)}33.79%,100%{opacity:0;transform:scale(0)}}
 .l17{opacity:0;transform-origin:293px 212px;animation:shoot17 22.42s linear infinite}
 @keyframes shoot17{0%,31.94%{transform:scaleY(0);opacity:0}32.36%{transform:scaleY(1);opacity:1}32.99%{transform:scaleY(1);opacity:1}33.66%,100%{transform:scaleY(0);opacity:0}}.t18{animation:die18 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die18{0%,34.60%{opacity:1;transform:scale(1)}34.68%{opacity:.35;transform:scale(1.55)}36.21%,100%{opacity:1;transform:scale(1)}}
+@keyframes die18{0%,34.60%{opacity:1;transform:scale(1)}34.68%{opacity:.35;transform:scale(1.7)}35.48%,100%{opacity:0;transform:scale(0)}}
 .l18{opacity:0;transform-origin:293px 212px;animation:shoot18 22.42s linear infinite}
 @keyframes shoot18{0%,33.63%{transform:scaleY(0);opacity:0}34.05%{transform:scaleY(1);opacity:1}34.68%{transform:scaleY(1);opacity:1}35.35%,100%{transform:scaleY(0);opacity:0}}.t19{animation:die19 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die19{0%,36.30%{opacity:1;transform:scale(1)}36.38%{opacity:.35;transform:scale(1.55)}37.90%,100%{opacity:1;transform:scale(1)}}
+@keyframes die19{0%,36.30%{opacity:1;transform:scale(1)}36.38%{opacity:.35;transform:scale(1.7)}37.18%,100%{opacity:0;transform:scale(0)}}
 .l19{opacity:0;transform-origin:293px 212px;animation:shoot19 22.42s linear infinite}
 @keyframes shoot19{0%,35.33%{transform:scaleY(0);opacity:0}35.75%{transform:scaleY(1);opacity:1}36.38%{transform:scaleY(1);opacity:1}37.05%,100%{transform:scaleY(0);opacity:0}}.t20{animation:die20 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die20{0%,37.99%{opacity:1;transform:scale(1)}38.07%{opacity:.35;transform:scale(1.55)}39.60%,100%{opacity:1;transform:scale(1)}}
+@keyframes die20{0%,37.99%{opacity:1;transform:scale(1)}38.07%{opacity:.35;transform:scale(1.7)}38.87%,100%{opacity:0;transform:scale(0)}}
 .l20{opacity:0;transform-origin:293px 212px;animation:shoot20 22.42s linear infinite}
 @keyframes shoot20{0%,37.02%{transform:scaleY(0);opacity:0}37.44%{transform:scaleY(1);opacity:1}38.07%{transform:scaleY(1);opacity:1}38.74%,100%{transform:scaleY(0);opacity:0}}.t21{animation:die21 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die21{0%,39.69%{opacity:1;transform:scale(1)}39.77%{opacity:.35;transform:scale(1.55)}41.29%,100%{opacity:1;transform:scale(1)}}
+@keyframes die21{0%,39.69%{opacity:1;transform:scale(1)}39.77%{opacity:.35;transform:scale(1.7)}40.57%,100%{opacity:0;transform:scale(0)}}
 .l21{opacity:0;transform-origin:311px 212px;animation:shoot21 22.42s linear infinite}
 @keyframes shoot21{0%,38.72%{transform:scaleY(0);opacity:0}39.14%{transform:scaleY(1);opacity:1}39.77%{transform:scaleY(1);opacity:1}40.44%,100%{transform:scaleY(0);opacity:0}}.t22{animation:die22 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die22{0%,41.38%{opacity:1;transform:scale(1)}41.46%{opacity:.35;transform:scale(1.55)}42.99%,100%{opacity:1;transform:scale(1)}}
+@keyframes die22{0%,41.38%{opacity:1;transform:scale(1)}41.46%{opacity:.35;transform:scale(1.7)}42.26%,100%{opacity:0;transform:scale(0)}}
 .l22{opacity:0;transform-origin:311px 212px;animation:shoot22 22.42s linear infinite}
 @keyframes shoot22{0%,40.41%{transform:scaleY(0);opacity:0}40.83%{transform:scaleY(1);opacity:1}41.46%{transform:scaleY(1);opacity:1}42.13%,100%{transform:scaleY(0);opacity:0}}.t23{animation:die23 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die23{0%,43.08%{opacity:1;transform:scale(1)}43.16%{opacity:.35;transform:scale(1.55)}44.68%,100%{opacity:1;transform:scale(1)}}
+@keyframes die23{0%,43.08%{opacity:1;transform:scale(1)}43.16%{opacity:.35;transform:scale(1.7)}43.96%,100%{opacity:0;transform:scale(0)}}
 .l23{opacity:0;transform-origin:311px 212px;animation:shoot23 22.42s linear infinite}
 @keyframes shoot23{0%,42.11%{transform:scaleY(0);opacity:0}42.53%{transform:scaleY(1);opacity:1}43.16%{transform:scaleY(1);opacity:1}43.83%,100%{transform:scaleY(0);opacity:0}}.t24{animation:die24 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die24{0%,44.77%{opacity:1;transform:scale(1)}44.85%{opacity:.35;transform:scale(1.55)}46.38%,100%{opacity:1;transform:scale(1)}}
+@keyframes die24{0%,44.77%{opacity:1;transform:scale(1)}44.85%{opacity:.35;transform:scale(1.7)}45.65%,100%{opacity:0;transform:scale(0)}}
 .l24{opacity:0;transform-origin:311px 212px;animation:shoot24 22.42s linear infinite}
 @keyframes shoot24{0%,43.80%{transform:scaleY(0);opacity:0}44.22%{transform:scaleY(1);opacity:1}44.85%{transform:scaleY(1);opacity:1}45.52%,100%{transform:scaleY(0);opacity:0}}.t25{animation:die25 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die25{0%,46.47%{opacity:1;transform:scale(1)}46.55%{opacity:.35;transform:scale(1.55)}48.07%,100%{opacity:1;transform:scale(1)}}
+@keyframes die25{0%,46.47%{opacity:1;transform:scale(1)}46.55%{opacity:.35;transform:scale(1.7)}47.35%,100%{opacity:0;transform:scale(0)}}
 .l25{opacity:0;transform-origin:329px 212px;animation:shoot25 22.42s linear infinite}
 @keyframes shoot25{0%,45.50%{transform:scaleY(0);opacity:0}45.92%{transform:scaleY(1);opacity:1}46.55%{transform:scaleY(1);opacity:1}47.21%,100%{transform:scaleY(0);opacity:0}}.t26{animation:die26 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die26{0%,48.16%{opacity:1;transform:scale(1)}48.24%{opacity:.35;transform:scale(1.55)}49.77%,100%{opacity:1;transform:scale(1)}}
+@keyframes die26{0%,48.16%{opacity:1;transform:scale(1)}48.24%{opacity:.35;transform:scale(1.7)}49.04%,100%{opacity:0;transform:scale(0)}}
 .l26{opacity:0;transform-origin:329px 212px;animation:shoot26 22.42s linear infinite}
 @keyframes shoot26{0%,47.19%{transform:scaleY(0);opacity:0}47.61%{transform:scaleY(1);opacity:1}48.24%{transform:scaleY(1);opacity:1}48.91%,100%{transform:scaleY(0);opacity:0}}.t27{animation:die27 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die27{0%,49.86%{opacity:1;transform:scale(1)}49.94%{opacity:.35;transform:scale(1.55)}51.46%,100%{opacity:1;transform:scale(1)}}
+@keyframes die27{0%,49.86%{opacity:1;transform:scale(1)}49.94%{opacity:.35;transform:scale(1.7)}50.74%,100%{opacity:0;transform:scale(0)}}
 .l27{opacity:0;transform-origin:329px 212px;animation:shoot27 22.42s linear infinite}
 @keyframes shoot27{0%,48.88%{transform:scaleY(0);opacity:0}49.31%{transform:scaleY(1);opacity:1}49.94%{transform:scaleY(1);opacity:1}50.60%,100%{transform:scaleY(0);opacity:0}}.t28{animation:die28 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die28{0%,51.55%{opacity:1;transform:scale(1)}51.63%{opacity:.35;transform:scale(1.55)}53.16%,100%{opacity:1;transform:scale(1)}}
+@keyframes die28{0%,51.55%{opacity:1;transform:scale(1)}51.63%{opacity:.35;transform:scale(1.7)}52.43%,100%{opacity:0;transform:scale(0)}}
 .l28{opacity:0;transform-origin:347px 212px;animation:shoot28 22.42s linear infinite}
 @keyframes shoot28{0%,50.58%{transform:scaleY(0);opacity:0}51.00%{transform:scaleY(1);opacity:1}51.63%{transform:scaleY(1);opacity:1}52.30%,100%{transform:scaleY(0);opacity:0}}.t29{animation:die29 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die29{0%,53.25%{opacity:1;transform:scale(1)}53.33%{opacity:.35;transform:scale(1.55)}54.85%,100%{opacity:1;transform:scale(1)}}
+@keyframes die29{0%,53.25%{opacity:1;transform:scale(1)}53.33%{opacity:.35;transform:scale(1.7)}54.13%,100%{opacity:0;transform:scale(0)}}
 .l29{opacity:0;transform-origin:347px 212px;animation:shoot29 22.42s linear infinite}
 @keyframes shoot29{0%,52.27%{transform:scaleY(0);opacity:0}52.70%{transform:scaleY(1);opacity:1}53.33%{transform:scaleY(1);opacity:1}53.99%,100%{transform:scaleY(0);opacity:0}}.t30{animation:die30 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die30{0%,54.94%{opacity:1;transform:scale(1)}55.02%{opacity:.35;transform:scale(1.55)}56.55%,100%{opacity:1;transform:scale(1)}}
+@keyframes die30{0%,54.94%{opacity:1;transform:scale(1)}55.02%{opacity:.35;transform:scale(1.7)}55.82%,100%{opacity:0;transform:scale(0)}}
 .l30{opacity:0;transform-origin:347px 212px;animation:shoot30 22.42s linear infinite}
 @keyframes shoot30{0%,53.97%{transform:scaleY(0);opacity:0}54.39%{transform:scaleY(1);opacity:1}55.02%{transform:scaleY(1);opacity:1}55.69%,100%{transform:scaleY(0);opacity:0}}.t31{animation:die31 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die31{0%,56.64%{opacity:1;transform:scale(1)}56.72%{opacity:.35;transform:scale(1.55)}58.24%,100%{opacity:1;transform:scale(1)}}
+@keyframes die31{0%,56.64%{opacity:1;transform:scale(1)}56.72%{opacity:.35;transform:scale(1.7)}57.52%,100%{opacity:0;transform:scale(0)}}
 .l31{opacity:0;transform-origin:365px 212px;animation:shoot31 22.42s linear infinite}
 @keyframes shoot31{0%,55.66%{transform:scaleY(0);opacity:0}56.09%{transform:scaleY(1);opacity:1}56.72%{transform:scaleY(1);opacity:1}57.38%,100%{transform:scaleY(0);opacity:0}}.t32{animation:die32 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die32{0%,58.33%{opacity:1;transform:scale(1)}58.41%{opacity:.35;transform:scale(1.55)}59.94%,100%{opacity:1;transform:scale(1)}}
+@keyframes die32{0%,58.33%{opacity:1;transform:scale(1)}58.41%{opacity:.35;transform:scale(1.7)}59.21%,100%{opacity:0;transform:scale(0)}}
 .l32{opacity:0;transform-origin:365px 212px;animation:shoot32 22.42s linear infinite}
 @keyframes shoot32{0%,57.36%{transform:scaleY(0);opacity:0}57.78%{transform:scaleY(1);opacity:1}58.41%{transform:scaleY(1);opacity:1}59.08%,100%{transform:scaleY(0);opacity:0}}.t33{animation:die33 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die33{0%,60.03%{opacity:1;transform:scale(1)}60.11%{opacity:.35;transform:scale(1.55)}61.63%,100%{opacity:1;transform:scale(1)}}
+@keyframes die33{0%,60.03%{opacity:1;transform:scale(1)}60.11%{opacity:.35;transform:scale(1.7)}60.91%,100%{opacity:0;transform:scale(0)}}
 .l33{opacity:0;transform-origin:365px 212px;animation:shoot33 22.42s linear infinite}
 @keyframes shoot33{0%,59.05%{transform:scaleY(0);opacity:0}59.48%{transform:scaleY(1);opacity:1}60.11%{transform:scaleY(1);opacity:1}60.77%,100%{transform:scaleY(0);opacity:0}}.t34{animation:die34 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die34{0%,61.72%{opacity:1;transform:scale(1)}61.80%{opacity:.35;transform:scale(1.55)}63.33%,100%{opacity:1;transform:scale(1)}}
+@keyframes die34{0%,61.72%{opacity:1;transform:scale(1)}61.80%{opacity:.35;transform:scale(1.7)}62.60%,100%{opacity:0;transform:scale(0)}}
 .l34{opacity:0;transform-origin:365px 212px;animation:shoot34 22.42s linear infinite}
 @keyframes shoot34{0%,60.75%{transform:scaleY(0);opacity:0}61.17%{transform:scaleY(1);opacity:1}61.80%{transform:scaleY(1);opacity:1}62.47%,100%{transform:scaleY(0);opacity:0}}.t35{animation:die35 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die35{0%,63.42%{opacity:1;transform:scale(1)}63.50%{opacity:.35;transform:scale(1.55)}65.02%,100%{opacity:1;transform:scale(1)}}
+@keyframes die35{0%,63.42%{opacity:1;transform:scale(1)}63.50%{opacity:.35;transform:scale(1.7)}64.30%,100%{opacity:0;transform:scale(0)}}
 .l35{opacity:0;transform-origin:365px 212px;animation:shoot35 22.42s linear infinite}
 @keyframes shoot35{0%,62.44%{transform:scaleY(0);opacity:0}62.87%{transform:scaleY(1);opacity:1}63.50%{transform:scaleY(1);opacity:1}64.16%,100%{transform:scaleY(0);opacity:0}}.t36{animation:die36 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die36{0%,65.11%{opacity:1;transform:scale(1)}65.19%{opacity:.35;transform:scale(1.55)}66.72%,100%{opacity:1;transform:scale(1)}}
+@keyframes die36{0%,65.11%{opacity:1;transform:scale(1)}65.19%{opacity:.35;transform:scale(1.7)}65.99%,100%{opacity:0;transform:scale(0)}}
 .l36{opacity:0;transform-origin:383px 212px;animation:shoot36 22.42s linear infinite}
 @keyframes shoot36{0%,64.14%{transform:scaleY(0);opacity:0}64.56%{transform:scaleY(1);opacity:1}65.19%{transform:scaleY(1);opacity:1}65.86%,100%{transform:scaleY(0);opacity:0}}.t37{animation:die37 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die37{0%,66.80%{opacity:1;transform:scale(1)}66.88%{opacity:.35;transform:scale(1.55)}68.41%,100%{opacity:1;transform:scale(1)}}
+@keyframes die37{0%,66.80%{opacity:1;transform:scale(1)}66.88%{opacity:.35;transform:scale(1.7)}67.69%,100%{opacity:0;transform:scale(0)}}
 .l37{opacity:0;transform-origin:401px 212px;animation:shoot37 22.42s linear infinite}
 @keyframes shoot37{0%,65.83%{transform:scaleY(0);opacity:0}66.26%{transform:scaleY(1);opacity:1}66.88%{transform:scaleY(1);opacity:1}67.55%,100%{transform:scaleY(0);opacity:0}}.t38{animation:die38 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die38{0%,68.50%{opacity:1;transform:scale(1)}68.58%{opacity:.35;transform:scale(1.55)}70.11%,100%{opacity:1;transform:scale(1)}}
+@keyframes die38{0%,68.50%{opacity:1;transform:scale(1)}68.58%{opacity:.35;transform:scale(1.7)}69.38%,100%{opacity:0;transform:scale(0)}}
 .l38{opacity:0;transform-origin:419px 212px;animation:shoot38 22.42s linear infinite}
 @keyframes shoot38{0%,67.53%{transform:scaleY(0);opacity:0}67.95%{transform:scaleY(1);opacity:1}68.58%{transform:scaleY(1);opacity:1}69.25%,100%{transform:scaleY(0);opacity:0}}.t39{animation:die39 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die39{0%,70.19%{opacity:1;transform:scale(1)}70.27%{opacity:.35;transform:scale(1.55)}71.80%,100%{opacity:1;transform:scale(1)}}
+@keyframes die39{0%,70.19%{opacity:1;transform:scale(1)}70.27%{opacity:.35;transform:scale(1.7)}71.08%,100%{opacity:0;transform:scale(0)}}
 .l39{opacity:0;transform-origin:419px 212px;animation:shoot39 22.42s linear infinite}
 @keyframes shoot39{0%,69.22%{transform:scaleY(0);opacity:0}69.65%{transform:scaleY(1);opacity:1}70.27%{transform:scaleY(1);opacity:1}70.94%,100%{transform:scaleY(0);opacity:0}}.t40{animation:die40 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die40{0%,71.89%{opacity:1;transform:scale(1)}71.97%{opacity:.35;transform:scale(1.55)}73.50%,100%{opacity:1;transform:scale(1)}}
+@keyframes die40{0%,71.89%{opacity:1;transform:scale(1)}71.97%{opacity:.35;transform:scale(1.7)}72.77%,100%{opacity:0;transform:scale(0)}}
 .l40{opacity:0;transform-origin:437px 212px;animation:shoot40 22.42s linear infinite}
 @keyframes shoot40{0%,70.92%{transform:scaleY(0);opacity:0}71.34%{transform:scaleY(1);opacity:1}71.97%{transform:scaleY(1);opacity:1}72.64%,100%{transform:scaleY(0);opacity:0}}.t41{animation:die41 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die41{0%,73.58%{opacity:1;transform:scale(1)}73.66%{opacity:.35;transform:scale(1.55)}75.19%,100%{opacity:1;transform:scale(1)}}
+@keyframes die41{0%,73.58%{opacity:1;transform:scale(1)}73.66%{opacity:.35;transform:scale(1.7)}74.47%,100%{opacity:0;transform:scale(0)}}
 .l41{opacity:0;transform-origin:437px 212px;animation:shoot41 22.42s linear infinite}
 @keyframes shoot41{0%,72.61%{transform:scaleY(0);opacity:0}73.04%{transform:scaleY(1);opacity:1}73.66%{transform:scaleY(1);opacity:1}74.33%,100%{transform:scaleY(0);opacity:0}}.t42{animation:die42 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die42{0%,75.28%{opacity:1;transform:scale(1)}75.36%{opacity:.35;transform:scale(1.55)}76.88%,100%{opacity:1;transform:scale(1)}}
+@keyframes die42{0%,75.28%{opacity:1;transform:scale(1)}75.36%{opacity:.35;transform:scale(1.7)}76.16%,100%{opacity:0;transform:scale(0)}}
 .l42{opacity:0;transform-origin:437px 212px;animation:shoot42 22.42s linear infinite}
 @keyframes shoot42{0%,74.31%{transform:scaleY(0);opacity:0}74.73%{transform:scaleY(1);opacity:1}75.36%{transform:scaleY(1);opacity:1}76.03%,100%{transform:scaleY(0);opacity:0}}.t43{animation:die43 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die43{0%,76.97%{opacity:1;transform:scale(1)}77.05%{opacity:.35;transform:scale(1.55)}78.58%,100%{opacity:1;transform:scale(1)}}
+@keyframes die43{0%,76.97%{opacity:1;transform:scale(1)}77.05%{opacity:.35;transform:scale(1.7)}77.86%,100%{opacity:0;transform:scale(0)}}
 .l43{opacity:0;transform-origin:437px 212px;animation:shoot43 22.42s linear infinite}
 @keyframes shoot43{0%,76.00%{transform:scaleY(0);opacity:0}76.43%{transform:scaleY(1);opacity:1}77.05%{transform:scaleY(1);opacity:1}77.72%,100%{transform:scaleY(0);opacity:0}}.t44{animation:die44 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die44{0%,78.67%{opacity:1;transform:scale(1)}78.75%{opacity:.35;transform:scale(1.55)}80.27%,100%{opacity:1;transform:scale(1)}}
+@keyframes die44{0%,78.67%{opacity:1;transform:scale(1)}78.75%{opacity:.35;transform:scale(1.7)}79.55%,100%{opacity:0;transform:scale(0)}}
 .l44{opacity:0;transform-origin:455px 212px;animation:shoot44 22.42s linear infinite}
 @keyframes shoot44{0%,77.70%{transform:scaleY(0);opacity:0}78.12%{transform:scaleY(1);opacity:1}78.75%{transform:scaleY(1);opacity:1}79.42%,100%{transform:scaleY(0);opacity:0}}.t45{animation:die45 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die45{0%,80.36%{opacity:1;transform:scale(1)}80.44%{opacity:.35;transform:scale(1.55)}81.97%,100%{opacity:1;transform:scale(1)}}
+@keyframes die45{0%,80.36%{opacity:1;transform:scale(1)}80.44%{opacity:.35;transform:scale(1.7)}81.25%,100%{opacity:0;transform:scale(0)}}
 .l45{opacity:0;transform-origin:455px 212px;animation:shoot45 22.42s linear infinite}
 @keyframes shoot45{0%,79.39%{transform:scaleY(0);opacity:0}79.82%{transform:scaleY(1);opacity:1}80.44%{transform:scaleY(1);opacity:1}81.11%,100%{transform:scaleY(0);opacity:0}}.t46{animation:die46 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die46{0%,82.06%{opacity:1;transform:scale(1)}82.14%{opacity:.35;transform:scale(1.55)}83.66%,100%{opacity:1;transform:scale(1)}}
+@keyframes die46{0%,82.06%{opacity:1;transform:scale(1)}82.14%{opacity:.35;transform:scale(1.7)}82.94%,100%{opacity:0;transform:scale(0)}}
 .l46{opacity:0;transform-origin:455px 212px;animation:shoot46 22.42s linear infinite}
 @keyframes shoot46{0%,81.09%{transform:scaleY(0);opacity:0}81.51%{transform:scaleY(1);opacity:1}82.14%{transform:scaleY(1);opacity:1}82.81%,100%{transform:scaleY(0);opacity:0}}.t47{animation:die47 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die47{0%,83.75%{opacity:1;transform:scale(1)}83.83%{opacity:.35;transform:scale(1.55)}85.36%,100%{opacity:1;transform:scale(1)}}
+@keyframes die47{0%,83.75%{opacity:1;transform:scale(1)}83.83%{opacity:.35;transform:scale(1.7)}84.64%,100%{opacity:0;transform:scale(0)}}
 .l47{opacity:0;transform-origin:455px 212px;animation:shoot47 22.42s linear infinite}
 @keyframes shoot47{0%,82.78%{transform:scaleY(0);opacity:0}83.21%{transform:scaleY(1);opacity:1}83.83%{transform:scaleY(1);opacity:1}84.50%,100%{transform:scaleY(0);opacity:0}}.t48{animation:die48 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die48{0%,85.45%{opacity:1;transform:scale(1)}85.53%{opacity:.35;transform:scale(1.55)}87.05%,100%{opacity:1;transform:scale(1)}}
+@keyframes die48{0%,85.45%{opacity:1;transform:scale(1)}85.53%{opacity:.35;transform:scale(1.7)}86.33%,100%{opacity:0;transform:scale(0)}}
 .l48{opacity:0;transform-origin:455px 212px;animation:shoot48 22.42s linear infinite}
 @keyframes shoot48{0%,84.48%{transform:scaleY(0);opacity:0}84.90%{transform:scaleY(1);opacity:1}85.53%{transform:scaleY(1);opacity:1}86.20%,100%{transform:scaleY(0);opacity:0}}.t49{animation:die49 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die49{0%,87.14%{opacity:1;transform:scale(1)}87.22%{opacity:.35;transform:scale(1.55)}88.75%,100%{opacity:1;transform:scale(1)}}
+@keyframes die49{0%,87.14%{opacity:1;transform:scale(1)}87.22%{opacity:.35;transform:scale(1.7)}88.03%,100%{opacity:0;transform:scale(0)}}
 .l49{opacity:0;transform-origin:455px 212px;animation:shoot49 22.42s linear infinite}
 @keyframes shoot49{0%,86.17%{transform:scaleY(0);opacity:0}86.60%{transform:scaleY(1);opacity:1}87.22%{transform:scaleY(1);opacity:1}87.89%,100%{transform:scaleY(0);opacity:0}}.t50{animation:die50 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die50{0%,88.84%{opacity:1;transform:scale(1)}88.92%{opacity:.35;transform:scale(1.55)}90.44%,100%{opacity:1;transform:scale(1)}}
+@keyframes die50{0%,88.84%{opacity:1;transform:scale(1)}88.92%{opacity:.35;transform:scale(1.7)}89.72%,100%{opacity:0;transform:scale(0)}}
 .l50{opacity:0;transform-origin:455px 212px;animation:shoot50 22.42s linear infinite}
 @keyframes shoot50{0%,87.87%{transform:scaleY(0);opacity:0}88.29%{transform:scaleY(1);opacity:1}88.92%{transform:scaleY(1);opacity:1}89.59%,100%{transform:scaleY(0);opacity:0}}.t51{animation:die51 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die51{0%,90.53%{opacity:1;transform:scale(1)}90.61%{opacity:.35;transform:scale(1.55)}92.14%,100%{opacity:1;transform:scale(1)}}
+@keyframes die51{0%,90.53%{opacity:1;transform:scale(1)}90.61%{opacity:.35;transform:scale(1.7)}91.42%,100%{opacity:0;transform:scale(0)}}
 .l51{opacity:0;transform-origin:473px 212px;animation:shoot51 22.42s linear infinite}
 @keyframes shoot51{0%,89.56%{transform:scaleY(0);opacity:0}89.99%{transform:scaleY(1);opacity:1}90.61%{transform:scaleY(1);opacity:1}91.28%,100%{transform:scaleY(0);opacity:0}}.t52{animation:die52 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die52{0%,92.23%{opacity:1;transform:scale(1)}92.31%{opacity:.35;transform:scale(1.55)}93.83%,100%{opacity:1;transform:scale(1)}}
+@keyframes die52{0%,92.23%{opacity:1;transform:scale(1)}92.31%{opacity:.35;transform:scale(1.7)}93.11%,100%{opacity:0;transform:scale(0)}}
 .l52{opacity:0;transform-origin:473px 212px;animation:shoot52 22.42s linear infinite}
 @keyframes shoot52{0%,91.26%{transform:scaleY(0);opacity:0}91.68%{transform:scaleY(1);opacity:1}92.31%{transform:scaleY(1);opacity:1}92.98%,100%{transform:scaleY(0);opacity:0}}.t53{animation:die53 22.42s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die53{0%,93.92%{opacity:1;transform:scale(1)}94.00%{opacity:.35;transform:scale(1.55)}95.53%,100%{opacity:1;transform:scale(1)}}
+@keyframes die53{0%,93.92%{opacity:1;transform:scale(1)}94.00%{opacity:.35;transform:scale(1.7)}94.81%,100%{opacity:0;transform:scale(0)}}
 .l53{opacity:0;transform-origin:473px 212px;animation:shoot53 22.42s linear infinite}
 @keyframes shoot53{0%,92.95%{transform:scaleY(0);opacity:0}93.38%{transform:scaleY(1);opacity:1}94.00%{transform:scaleY(1);opacity:1}94.67%,100%{transform:scaleY(0);opacity:0}}.ship{animation:cruise 22.42s linear infinite}@keyframes cruise{0%{transform:translate(160px,212px)}3.38%{transform:translate(175.0px,212px)}5.07%{transform:translate(193.0px,212px)}6.77%{transform:translate(193.0px,212px)}8.46%{transform:translate(211.0px,212px)}10.16%{transform:translate(211.0px,212px)}11.85%{transform:translate(211.0px,212px)}13.55%{transform:translate(229.0px,212px)}15.24%{transform:translate(229.0px,212px)}16.94%{transform:translate(229.0px,212px)}18.63%{transform:translate(247.0px,212px)}20.33%{transform:translate(247.0px,212px)}22.02%{transform:translate(247.0px,212px)}23.72%{transform:translate(247.0px,212px)}25.41%{transform:translate(247.0px,212px)}27.11%{transform:translate(265.0px,212px)}28.80%{transform:translate(265.0px,212px)}30.50%{transform:translate(265.0px,212px)}32.19%{transform:translate(283.0px,212px)}33.88%{transform:translate(283.0px,212px)}35.58%{transform:translate(283.0px,212px)}37.27%{transform:translate(283.0px,212px)}38.97%{transform:translate(301.0px,212px)}40.66%{transform:translate(301.0px,212px)}42.36%{transform:translate(301.0px,212px)}44.05%{transform:translate(301.0px,212px)}45.75%{transform:translate(319.0px,212px)}47.44%{transform:translate(319.0px,212px)}49.14%{transform:translate(319.0px,212px)}50.83%{transform:translate(337.0px,212px)}52.53%{transform:translate(337.0px,212px)}54.22%{transform:translate(337.0px,212px)}55.92%{transform:translate(355.0px,212px)}57.61%{transform:translate(355.0px,212px)}59.31%{transform:translate(355.0px,212px)}61.00%{transform:translate(355.0px,212px)}62.70%{transform:translate(355.0px,212px)}64.39%{transform:translate(373.0px,212px)}66.09%{transform:translate(391.0px,212px)}67.78%{transform:translate(409.0px,212px)}69.48%{transform:translate(409.0px,212px)}71.17%{transform:translate(427.0px,212px)}72.87%{transform:translate(427.0px,212px)}74.56%{transform:translate(427.0px,212px)}76.26%{transform:translate(427.0px,212px)}77.95%{transform:translate(445.0px,212px)}79.65%{transform:translate(445.0px,212px)}81.34%{transform:translate(445.0px,212px)}83.04%{transform:translate(445.0px,212px)}84.73%{transform:translate(445.0px,212px)}86.43%{transform:translate(445.0px,212px)}88.12%{transform:translate(445.0px,212px)}89.82%{transform:translate(463.0px,212px)}91.51%{transform:translate(463.0px,212px)}93.21%{transform:translate(463.0px,212px)}100%{transform:translate(160px,212px)}}.ship-core{animation:pulse 3.74s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.7}50%{opacity:1}}
   ]]></style></defs>

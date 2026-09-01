@@ -218,10 +218,10 @@ const shipKeys = [`0%{transform:translate(${gridOriginX}px,${SHIP_Y}px)}`]
 targets.forEach((t, i) => {
   const start = SETUP + i * HIT
   const hitAt = start + HIT * 0.62
-  const recoverAt = hitAt + Math.min(0.55, HIT * 0.9)
+  const goneAt = hitAt + 0.18
   const endPct = (hitAt / totalDur) * 100
   const startPct = (start / totalDur) * 100
-  const recoverPct = Math.min(99.2, (recoverAt / totalDur) * 100)
+  const gonePct = Math.min(99.4, (goneAt / totalDur) * 100)
   const cx = cellX(t.week) + CELL / 2
   const cy = cellY(t.dow) + CELL / 2
   const shipX = cx - 10
@@ -229,11 +229,11 @@ targets.forEach((t, i) => {
   const laserColor = levelFill[t.level] || '#4c8bff'
   const holdPct = Math.max(0, endPct - 0.08).toFixed(2)
   const glowPct = endPct.toFixed(2)
-  const backPct = recoverPct.toFixed(2)
+  const vanishPct = gonePct.toFixed(2)
   const firePct = (((start + HIT * 0.25) / totalDur) * 100).toFixed(2)
   const fadePct = (((hitAt + 0.15) / totalDur) * 100).toFixed(2)
   css += `.t${i}{animation:die${i} ${totalDur}s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die${i}{0%,${holdPct}%{opacity:1;transform:scale(1)}${glowPct}%{opacity:.35;transform:scale(1.55)}${backPct}%,100%{opacity:1;transform:scale(1)}}
+@keyframes die${i}{0%,${holdPct}%{opacity:1;transform:scale(1)}${glowPct}%{opacity:.35;transform:scale(1.7)}${vanishPct}%,100%{opacity:0;transform:scale(0)}}
 .l${i}{opacity:0;transform-origin:${cx}px ${SHIP_Y}px;animation:shoot${i} ${totalDur}s linear infinite}
 @keyframes shoot${i}{0%,${startPct.toFixed(2)}%{transform:scaleY(0);opacity:0}${firePct}%{transform:scaleY(1);opacity:1}${glowPct}%{transform:scaleY(1);opacity:1}${fadePct}%,100%{transform:scaleY(0);opacity:0}}`
   lasers += `<rect class="l${i}" x="${(cx - laserWidth / 2).toFixed(1)}" y="${cy.toFixed(1)}" width="${laserWidth}" height="${Math.max(8, SHIP_Y - cy).toFixed(1)}" fill="${laserColor}"/>`

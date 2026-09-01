@@ -206,6 +206,7 @@ if (totalDur > maxLoop) {
   HIT = Math.max(0.28, (maxLoop - SETUP - 1.2) / targets.length)
   totalDur = SETUP + targets.length * HIT + 1.2
 }
+totalDur = Math.round(totalDur * 100) / 100
 
 const cellX = (week: number): number => gridOriginX + (week - minWeek) * STEP
 const cellY = (dow: number): number => PAD_Y + dow * STEP
@@ -217,17 +218,24 @@ const shipKeys = [`0%{transform:translate(${gridOriginX}px,${SHIP_Y}px)}`]
 targets.forEach((t, i) => {
   const start = SETUP + i * HIT
   const hitAt = start + HIT * 0.62
+  const recoverAt = hitAt + Math.min(0.55, HIT * 0.9)
   const endPct = (hitAt / totalDur) * 100
   const startPct = (start / totalDur) * 100
+  const recoverPct = Math.min(99.2, (recoverAt / totalDur) * 100)
   const cx = cellX(t.week) + CELL / 2
   const cy = cellY(t.dow) + CELL / 2
   const shipX = cx - 10
   const laserWidth = t.level >= 3 ? 3 : 2
   const laserColor = levelFill[t.level] || '#4c8bff'
+  const holdPct = Math.max(0, endPct - 0.08).toFixed(2)
+  const glowPct = endPct.toFixed(2)
+  const backPct = recoverPct.toFixed(2)
+  const firePct = (((start + HIT * 0.25) / totalDur) * 100).toFixed(2)
+  const fadePct = (((hitAt + 0.15) / totalDur) * 100).toFixed(2)
   css += `.t${i}{animation:die${i} ${totalDur}s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes die${i}{0%,${(endPct - 0.05).toFixed(2)}%{opacity:1;transform:scale(1)}${endPct.toFixed(2)}%{opacity:.2;transform:scale(1.8)}${(endPct + 0.8).toFixed(2)}%,100%{opacity:0;transform:scale(0)}}
-.l${i}{transform-origin:${cx}px ${SHIP_Y}px;animation:shoot${i} ${totalDur}s linear infinite}
-@keyframes shoot${i}{0%,${startPct.toFixed(2)}%{transform:scaleY(0);opacity:0}${(((start + HIT * 0.25) / totalDur) * 100).toFixed(2)}%{transform:scaleY(1);opacity:1}${endPct.toFixed(2)}%{transform:scaleY(1);opacity:1}${(((hitAt + 0.15) / totalDur) * 100).toFixed(2)}%,100%{transform:scaleY(0);opacity:0}}`
+@keyframes die${i}{0%,${holdPct}%{opacity:1;transform:scale(1)}${glowPct}%{opacity:.35;transform:scale(1.55)}${backPct}%,100%{opacity:1;transform:scale(1)}}
+.l${i}{opacity:0;transform-origin:${cx}px ${SHIP_Y}px;animation:shoot${i} ${totalDur}s linear infinite}
+@keyframes shoot${i}{0%,${startPct.toFixed(2)}%{transform:scaleY(0);opacity:0}${firePct}%{transform:scaleY(1);opacity:1}${glowPct}%{transform:scaleY(1);opacity:1}${fadePct}%,100%{transform:scaleY(0);opacity:0}}`
   lasers += `<rect class="l${i}" x="${(cx - laserWidth / 2).toFixed(1)}" y="${cy.toFixed(1)}" width="${laserWidth}" height="${Math.max(8, SHIP_Y - cy).toFixed(1)}" fill="${laserColor}"/>`
   shipKeys.push(
     `${(((start + HIT * 0.15) / totalDur) * 100).toFixed(2)}%{transform:translate(${shipX.toFixed(1)}px,${SHIP_Y}px)}`,
@@ -237,7 +245,7 @@ shipKeys.push(`100%{transform:translate(${gridOriginX}px,${SHIP_Y}px)}`)
 css += `.ship{animation:cruise ${totalDur}s linear infinite}@keyframes cruise{${shipKeys.join('')}}`
 
 if (tier.id === 'storm' || tier.id === 'active') {
-  css += `.pulse{animation:pulse ${Math.max(0.8, totalDur / 6).toFixed(2)}s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}`
+  css += `.ship-core{animation:pulse ${Math.max(0.8, totalDur / 6).toFixed(2)}s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:.7}50%{opacity:1}}`
 }
 
 let grid = ''
@@ -275,12 +283,14 @@ const invadersSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} $
   <text x="24" y="48" class="meta">${statsLine}</text>
   ${grid}
   ${lasers}
-  <g class="ship${tier.id === 'storm' || tier.id === 'active' ? ' pulse' : ''}">
-    <rect x="8" y="0" width="4" height="4" fill="#4c8bff"/>
-    <rect x="4" y="4" width="12" height="4" fill="#4c8bff"/>
-    <rect x="0" y="8" width="20" height="4" fill="#4c8bff"/>
-    <rect x="0" y="12" width="4" height="4" fill="#4c8bff"/>
-    <rect x="16" y="12" width="4" height="4" fill="#4c8bff"/>
+  <g class="ship" transform="translate(${gridOriginX},${SHIP_Y})">
+    <g class="ship-core">
+      <rect x="8" y="0" width="4" height="4" fill="#4c8bff"/>
+      <rect x="4" y="4" width="12" height="4" fill="#4c8bff"/>
+      <rect x="0" y="8" width="20" height="4" fill="#4c8bff"/>
+      <rect x="0" y="12" width="4" height="4" fill="#4c8bff"/>
+      <rect x="16" y="12" width="4" height="4" fill="#4c8bff"/>
+    </g>
   </g>
   <rect x="2" y="${H - FOOTER_H}" width="${W - 4}" height="${FOOTER_H - 2}" fill="#111111"/>
   <text x="24" y="${FOOTER_Y}" class="meta">${footerLeft}</text>

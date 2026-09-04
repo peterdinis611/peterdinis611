@@ -195,6 +195,6 @@
     </g>
   </g>
   <rect x="2" y="240" width="636" height="34" fill="#111111"/>
-  <text x="24" y="262" class="meta">streak 15d</text>
+  <text x="24" y="262" class="meta">streak 16d</text>
   <text x="616" y="262" class="meta" text-anchor="end">brighter = more commits</text>
 </svg>

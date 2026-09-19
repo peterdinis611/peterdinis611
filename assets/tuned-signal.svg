@@ -34,7 +34,7 @@
   <text x="210" y="46" class="live">LIVE</text>
   <text x="44" y="84" class="pace">ACTIVE SPRINT</text>
 
-  <text x="44" y="148" class="mega">940</text>
+  <text x="44" y="148" class="mega">942</text>
   <text x="44" y="170" class="label">COMMITS / 12 MONTHS</text>
 
   <text x="44" y="200" class="label">INTENSITY</text>
@@ -46,7 +46,7 @@
   <text x="44" y="256" class="metric">22</text>
   <text x="78" y="256" class="unit">active / 28d</text>
   <line x1="188" y1="244" x2="188" y2="260" stroke="#2a2a2a" stroke-width="1"/>
-  <text x="204" y="256" class="metric">1</text>
+  <text x="204" y="256" class="metric">2</text>
   <text x="236" y="256" class="unit">day streak</text>
 
   <line x1="352" y1="36" x2="352" y2="254" stroke="#2a2a2a" stroke-width="1"/>

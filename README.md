@@ -39,7 +39,7 @@
 ## Press office
 
 <p align="center">
-  <a href="https://dinis-portfolio.vercel.app/">
+  <a href="https://portfolio-dinis-sigma.vercel.app">
     <img src="./assets/contact.svg" width="100%" alt="Press office" />
   </a>
 </p>

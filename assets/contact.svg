@@ -1,106 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 280" role="img" aria-label="Contact">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 280" role="img" aria-label="Press office contact">
   <defs>
+    <pattern id="grain" width="120" height="120" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="14" r="0.6" fill="#c6ff3d" opacity="0.05"/>
+      <circle cx="41" cy="63" r="0.5" fill="#4c8bff" opacity="0.06"/>
+      <circle cx="97" cy="28" r="0.7" fill="#ffffff" opacity="0.03"/>
+      <circle cx="72" cy="101" r="0.5" fill="#c6ff3d" opacity="0.04"/>
+    </pattern>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c6ff3d" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#c6ff3d" stop-opacity="0"/>
+    </linearGradient>
     <style>
       <![CDATA[
-        .eyebrow {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 11px;
-          letter-spacing: 0.28em;
-          fill: #4c8bff;
-        }
-        .title {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 34px;
-          font-weight: 700;
-          letter-spacing: -0.04em;
-          fill: #eeeeee;
-        }
-        .sub {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 14px;
-          fill: #888888;
-        }
-        .badge-dark {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.14em;
-          fill: #111111;
-        }
-        .badge-light {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.14em;
-          fill: #eeeeee;
-        }
-        .link {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 14px;
-          letter-spacing: 0.04em;
-          fill: #4c8bff;
-        }
-        .meta {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 12px;
-          letter-spacing: 0.18em;
-          fill: #888888;
-        }
-        .pulse { animation: blink 1.4s ease-in-out infinite; }
-        .rise {
-          opacity: 0;
-          animation: up 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-        .d1 { animation-delay: 0.05s; }
-        .d2 { animation-delay: 0.15s; }
-        .d3 { animation-delay: 0.25s; }
-        .d4 { animation-delay: 0.35s; }
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.35; }
-        }
-        @keyframes up {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
+        .hud{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.22em;fill:#c6ff3d}
+        .title{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:34px;font-weight:700;letter-spacing:-.04em;fill:#e8eee4}
+        .sub{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;fill:#7a8878}
+        .badge{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;font-weight:700;letter-spacing:.14em;fill:#e8eee4}
+        .link{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;letter-spacing:.04em;fill:#4c8bff}
+        .meta{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.18em;fill:#7a8878}
+        .pulse{animation:blink 1.4s ease-in-out infinite}
+        .rise{animation:up .55s cubic-bezier(.22,1,.36,1) both}
+        .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+        @keyframes up{from{transform:translateY(10px)}to{transform:translateY(0)}}
       ]]>
     </style>
   </defs>
-
-  <rect width="920" height="280" fill="#111111"/>
-  <rect x="18" y="18" width="884" height="244" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-  <rect x="18" y="18" width="5" height="244" fill="#4c8bff"/>
-
-  <path d="M40 48 H58 M40 48 V66" fill="none" stroke="#4c8bff" stroke-width="2"/>
-  <path d="M880 48 H862 M880 48 V66" fill="none" stroke="#4c8bff" stroke-width="2"/>
-  <path d="M40 232 H58 M40 232 V214" fill="none" stroke="#4c8bff" stroke-width="2"/>
-  <path d="M880 232 H862 M880 232 V214" fill="none" stroke="#4c8bff" stroke-width="2"/>
+  <rect width="920" height="280" fill="#070908"/>
+  <rect width="920" height="280" fill="url(#grain)"/>
+  <rect x="1" y="1" width="918" height="278" fill="none" stroke="#1c241c" stroke-width="2"/>
+  <polygon points="70,18 210,18 240,262 30,262" fill="url(#beam)"/>
+  <path d="M18 18 H46 V22 H22 V46 H18 Z" fill="#c6ff3d" opacity="0.55"/>
+  <path d="M902 18 H874 V22 H898 V46 H902 Z" fill="#4c8bff" opacity="0.55"/>
+  <path d="M18 262 H46 V258 H22 V234 H18 Z" fill="#4c8bff" opacity="0.4"/>
+  <path d="M902 262 H874 V258 H898 V234 H902 Z" fill="#c6ff3d" opacity="0.4"/>
 
   <g class="rise d1">
-    <text x="64" y="64" class="eyebrow">CONTACT // CHANNEL</text>
+    <text x="44" y="52" class="hud">PRESS OFFICE</text>
   </g>
-
   <g class="rise d2">
-    <text x="64" y="112" class="title">Portfolio is live</text>
-    <text x="64" y="140" class="sub">Not taking new work right now</text>
+    <text x="44" y="104" class="title">Portfolio is live</text>
+    <text x="44" y="132" class="sub">Transfer window closed · not taking new work</text>
   </g>
-
-  <!-- offline = gray (not accent blue), more padding -->
   <g class="rise d3">
-    <rect x="64" y="162" width="196" height="36" fill="#555555"/>
-    <circle class="pulse" cx="88" cy="180" r="5" fill="#eeeeee"/>
-    <text x="106" y="186" class="badge-light">STATUS OFFLINE</text>
-
-    <rect x="276" y="162" width="210" height="36" fill="none" stroke="#4c8bff" stroke-width="2"/>
-    <text x="298" y="186" class="link">PROJECTS ON PAUSE</text>
+    <rect x="44" y="156" width="210" height="36" fill="#2a2e2a"/>
+    <circle class="pulse" cx="68" cy="174" r="5" fill="#e8eee4"/>
+    <text x="86" y="180" class="badge">OUT OF SQUAD</text>
+    <rect x="270" y="156" width="228" height="36" fill="none" stroke="#c6ff3d" stroke-width="1.5"/>
+    <text x="292" y="180" class="link">PROJECTS ON PAUSE</text>
   </g>
-
   <g class="rise d4">
-    <text x="64" y="234" class="meta">EMAIL</text>
-    <text x="140" y="234" class="link">peterdinis611@gmail.com</text>
-
-    <text x="520" y="112" class="meta">OPEN LINK</text>
-    <text x="520" y="140" class="link">dinis-portfolio.vercel.app</text>
-    <text x="520" y="234" class="meta">PRAHA / CZECHIA</text>
+    <text x="44" y="236" class="meta">EMAIL</text>
+    <text x="120" y="236" class="link">peterdinis611@gmail.com</text>
+    <text x="520" y="104" class="meta">OPEN LINK</text>
+    <text x="520" y="132" class="link">dinis-portfolio.vercel.app</text>
+    <text x="520" y="236" class="meta">PRAHA / CZECHIA</text>
   </g>
 </svg>

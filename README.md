@@ -1,54 +1,54 @@
 <p align="center">
-  <img src="./assets/header.svg" width="100%" alt="Peter Dinis - Full-Stack Developer" />
+  <img src="./assets/header.svg" width="100%" alt="Peter Dinis - squad card" />
 </p>
 
 ---
 
-## About
+## Scouting report
 
 <p align="center">
-  <img src="./assets/about.svg" width="100%" alt="About" />
+  <img src="./assets/about.svg" width="100%" alt="Scouting report" />
 </p>
 
 ---
 
-## Tech
+## Formation
 
 <p align="center">
-  <img src="./assets/tech.svg" width="100%" alt="Tech stack" />
+  <img src="./assets/tech.svg" width="100%" alt="Formation squad" />
 </p>
 
 ---
 
-## Currently tuned for
+## Tactical board
 
 <p align="center">
-  <img src="./assets/tuning-panel.svg" width="100%" alt="Currently tuned for" />
+  <img src="./assets/tuning-panel.svg" width="100%" alt="Tactical board" />
 </p>
 
 ---
 
-## Contrib Invaders
+## Match kernel
 
 <p align="center">
-  <img src="./assets/contrib-graph.svg" width="100%" alt="Contrib Invaders" />
+  <img src="./assets/contrib-graph.svg" width="100%" alt="Isometric match kernel compiled from GitHub commits" />
 </p>
 
 ---
 
-## Contact
+## Press office
 
 <p align="center">
   <a href="https://dinis-portfolio.vercel.app/">
-    <img src="./assets/contact.svg" width="100%" alt="Contact" />
+    <img src="./assets/contact.svg" width="100%" alt="Press office" />
   </a>
 </p>
 
 <p align="center">
   <a href="mailto:peterdinis611@gmail.com">
-    <img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=4c8bff" alt="Email peterdinis611@gmail.com" />
+    <img src="https://img.shields.io/badge/Email-070908?style=for-the-badge&logo=gmail&logoColor=c6ff3d" alt="Email peterdinis611@gmail.com" />
   </a>
   <a href="https://www.linkedin.com/in/peter-dinis-58520b214/">
-    <img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=linkedin&logoColor=4c8bff" alt="LinkedIn Peter Dinis" />
+    <img src="https://img.shields.io/badge/LinkedIn-070908?style=for-the-badge&logo=linkedin&logoColor=4c8bff" alt="LinkedIn Peter Dinis" />
   </a>
 </p>

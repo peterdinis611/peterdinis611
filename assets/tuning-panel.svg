@@ -1,79 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" role="img" aria-label="Currently tuned for ACTIVE SPRINT">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 290" role="img" aria-label="Tactical board HIGH PRESS">
   <defs>
-    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="0.8" fill="#242424"/>
+    <pattern id="grain" width="120" height="120" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="14" r="0.6" fill="#c6ff3d" opacity="0.05"/>
+      <circle cx="41" cy="63" r="0.5" fill="#4c8bff" opacity="0.06"/>
+      <circle cx="97" cy="28" r="0.7" fill="#ffffff" opacity="0.03"/>
     </pattern>
     <style>
       <![CDATA[
-        .eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.28em;fill:#4c8bff}
-        .pace{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:30px;font-weight:700;letter-spacing:-.04em;fill:#eeeeee}
-        .label{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.18em;fill:#888888}
-        .mega{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:44px;font-weight:700;letter-spacing:-.05em;fill:#eeeeee}
-        .metric{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:18px;font-weight:700;letter-spacing:-.03em;fill:#eeeeee}
-        .unit{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.06em;fill:#888888}
-        .pct{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.08em;fill:#4c8bff}
-        .idx{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;fill:#4c8bff}
-        .focus{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;fill:#eeeeee}
+        .eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.22em;fill:#c6ff3d}
+        .pace{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:30px;font-weight:700;letter-spacing:-.04em;fill:#e8eee4}
+        .label{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.18em;fill:#7a8878}
+        .mega{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:44px;font-weight:700;letter-spacing:-.05em;fill:#e8eee4}
+        .metric{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:18px;font-weight:700;letter-spacing:-.03em;fill:#e8eee4}
+        .unit{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.06em;fill:#7a8878}
+        .pct{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.08em;fill:#c6ff3d}
+        .idx{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;fill:#c6ff3d}
+        .focus{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;fill:#e8eee4}
         .live{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.22em;fill:#4c8bff}
         .blink{animation:blink 1.6s ease-in-out infinite}
-        .bar{transform-box:fill-box;transform-origin:left center;animation:fill 1s cubic-bezier(.22,1,.36,1) .2s both}
-        @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+        .bar{animation:glow 1.8s ease-in-out infinite}
+        @keyframes glow{0%,100%{opacity:1}50%{opacity:.65}}
         @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
       ]]>
     </style>
   </defs>
+  <rect width="920" height="290" fill="#070908"/>
+  <rect width="920" height="290" fill="url(#grain)"/>
+  <rect x="1" y="1" width="918" height="288" fill="none" stroke="#1c241c" stroke-width="2"/>
+  <path d="M16 16 H44 V20 H20 V44 H16 Z" fill="#c6ff3d" opacity="0.55"/>
+  <path d="M904 16 H876 V20 H900 V44 H904 Z" fill="#4c8bff" opacity="0.55"/>
 
-  <rect width="920" height="290" fill="#111111"/>
-  <rect width="920" height="290" fill="url(#dots)" opacity="0.65"/>
-  <rect x="16" y="16" width="888" height="258" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-  <rect x="16" y="16" width="4" height="258" fill="#4c8bff"/>
+  <text x="44" y="46" class="eyebrow">TACTICAL BOARD</text>
+  <circle class="blink" cx="214" cy="42" r="4" fill="#c6ff3d"/>
+  <text x="226" y="46" class="live">LIVE  //  4-3-3</text>
+  <text x="44" y="84" class="pace">HIGH PRESS</text>
 
-  <!-- LEFT COLUMN: fixed y bands, no overlap -->
-  <text x="44" y="46" class="eyebrow">TUNING SIGNAL</text>
-  <circle class="blink" cx="198" cy="42" r="4" fill="#4c8bff"/>
-  <text x="210" y="46" class="live">LIVE</text>
-  <text x="44" y="84" class="pace">ACTIVE SPRINT</text>
+  <text x="44" y="148" class="mega">1633</text>
+  <text x="44" y="170" class="label">GOALS / 12 MONTHS</text>
 
-  <text x="44" y="148" class="mega">1631</text>
-  <text x="44" y="170" class="label">COMMITS / 12 MONTHS</text>
-
-  <text x="44" y="200" class="label">INTENSITY</text>
+  <text x="44" y="200" class="label">PRESS</text>
   <text x="324" y="200" class="pct" text-anchor="end">100%</text>
-  <rect x="44" y="208" width="280" height="6" fill="#111111"/>
-  <rect class="bar" x="44" y="208" width="280" height="6" fill="#4c8bff"/>
+  <rect x="44" y="208" width="280" height="6" fill="#101411"/>
+  <rect class="bar" x="44" y="208" width="280" height="6" fill="#c6ff3d"/>
 
-  <line x1="44" y1="230" x2="324" y2="230" stroke="#2a2a2a" stroke-width="1"/>
+  <line x1="44" y1="230" x2="324" y2="230" stroke="#1c241c" stroke-width="1"/>
   <text x="44" y="256" class="metric">20</text>
-  <text x="78" y="256" class="unit">active / 28d</text>
-  <line x1="188" y1="244" x2="188" y2="260" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="78" y="256" class="unit">apps / 28d</text>
+  <line x1="188" y1="244" x2="188" y2="260" stroke="#1c241c" stroke-width="1"/>
   <text x="204" y="256" class="metric">5</text>
-  <text x="236" y="256" class="unit">day streak</text>
+  <text x="236" y="256" class="unit">unbeaten</text>
 
-  <line x1="352" y1="36" x2="352" y2="254" stroke="#2a2a2a" stroke-width="1"/>
+  <line x1="352" y1="36" x2="352" y2="254" stroke="#1c241c" stroke-width="1"/>
 
-  <text x="372" y="46" class="eyebrow">FOCUSED ON</text>
+  <text x="372" y="46" class="eyebrow">GAME PLAN</text>
   <g>
     <text x="372" y="86" class="idx">01</text>
-    <rect x="408" y="74" width="2" height="18" fill="#4c8bff"/>
+    <rect x="408" y="74" width="2" height="18" fill="#c6ff3d"/>
     <text x="428" y="86" class="focus">high commit velocity this month</text>
-    <line x1="428" y1="100" x2="884" y2="100" stroke="#2a2a2a" stroke-width="1"/>
+    <line x1="428" y1="100" x2="884" y2="100" stroke="#1c241c" stroke-width="1"/>
   </g>
   <g>
     <text x="372" y="130" class="idx">02</text>
-    <rect x="408" y="118" width="2" height="18" fill="#4c8bff"/>
-    <text x="428" y="130" class="focus">refactors that stay boringly safe</text>
-    <line x1="428" y1="144" x2="884" y2="144" stroke="#2a2a2a" stroke-width="1"/>
+    <rect x="408" y="118" width="2" height="18" fill="#c6ff3d"/>
+    <text x="428" y="130" class="focus">refactors that stay onside</text>
+    <line x1="428" y1="144" x2="884" y2="144" stroke="#1c241c" stroke-width="1"/>
   </g>
   <g>
     <text x="372" y="174" class="idx">03</text>
-    <rect x="408" y="162" width="2" height="18" fill="#4c8bff"/>
-    <text x="428" y="174" class="focus">features from sketch to production</text>
-    <line x1="428" y1="188" x2="884" y2="188" stroke="#2a2a2a" stroke-width="1"/>
+    <rect x="408" y="162" width="2" height="18" fill="#c6ff3d"/>
+    <text x="428" y="174" class="focus">features from sketch to the box</text>
+    <line x1="428" y1="188" x2="884" y2="188" stroke="#1c241c" stroke-width="1"/>
   </g>
   <g>
     <text x="372" y="218" class="idx">04</text>
-    <rect x="408" y="206" width="2" height="18" fill="#4c8bff"/>
-    <text x="428" y="218" class="focus">pairing when it beats async</text>
-    <line x1="428" y1="232" x2="884" y2="232" stroke="#2a2a2a" stroke-width="1"/>
+    <rect x="408" y="206" width="2" height="18" fill="#c6ff3d"/>
+    <text x="428" y="218" class="focus">overlap when pairing beats async</text>
+    <line x1="428" y1="232" x2="884" y2="232" stroke="#1c241c" stroke-width="1"/>
   </g>
 </svg>

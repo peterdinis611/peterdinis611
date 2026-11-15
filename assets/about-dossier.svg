@@ -1,140 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-label="About Peter Dinis">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-label="Scouting report for Peter Dinis">
   <defs>
-    <pattern id="aboutDots" width="14" height="14" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="0.8" fill="#242424"/>
+    <pattern id="grain" width="120" height="120" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="14" r="0.6" fill="#c6ff3d" opacity="0.05"/>
+      <circle cx="41" cy="63" r="0.5" fill="#4c8bff" opacity="0.06"/>
+      <circle cx="97" cy="28" r="0.7" fill="#ffffff" opacity="0.03"/>
+      <circle cx="72" cy="101" r="0.5" fill="#c6ff3d" opacity="0.04"/>
     </pattern>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c6ff3d" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#c6ff3d" stop-opacity="0"/>
+    </linearGradient>
     <style>
       <![CDATA[
-        .eyebrow {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 11px;
-          letter-spacing: 0.28em;
-          fill: #4c8bff;
-        }
-        .name {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 34px;
-          font-weight: 700;
-          letter-spacing: -0.04em;
-          fill: #eeeeee;
-        }
-        .label {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 10px;
-          letter-spacing: 0.2em;
-          fill: #888888;
-        }
-        .value {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 15px;
-          fill: #eeeeee;
-        }
-        .chip {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 12px;
-          fill: #eeeeee;
-        }
-        .arrow {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 12px;
-          fill: #4c8bff;
-        }
-        .tag {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 13px;
-          fill: #888888;
-        }
-        .badge {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 11px;
-          letter-spacing: 0.16em;
-          fill: #eeeeee;
-        }
-        .idnum {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-          font-size: 11px;
-          letter-spacing: 0.14em;
-          fill: #4c8bff;
-        }
-        .rise {
-          opacity: 0;
-          animation: up 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-        .d1 { animation-delay: 0.04s; }
-        .d2 { animation-delay: 0.12s; }
-        .d3 { animation-delay: 0.2s; }
-        .d4 { animation-delay: 0.28s; }
-        .d5 { animation-delay: 0.36s; }
-        .pulse {
-          animation: blink 1.5s ease-in-out infinite;
-        }
-        @keyframes up {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
-        }
+        .hud{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.22em;fill:#c6ff3d}
+        .name{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:34px;font-weight:700;letter-spacing:-.04em;fill:#e8eee4}
+        .label{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.2em;fill:#7a8878}
+        .value{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;fill:#e8eee4}
+        .chip{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;fill:#e8eee4}
+        .arrow{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;fill:#c6ff3d}
+        .tag{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;fill:#7a8878}
+        .code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.14em;fill:#4c8bff}
+        .badge{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.16em;fill:#e8eee4}
+        .rise{animation:up .65s cubic-bezier(.22,1,.36,1) both}
+        .d1{animation-delay:.04s}.d2{animation-delay:.12s}.d3{animation-delay:.2s}.d4{animation-delay:.28s}.d5{animation-delay:.36s}
+        .pulse{animation:blink 1.5s ease-in-out infinite}
+        @keyframes up{from{transform:translateY(10px)}to{transform:translateY(0)}}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
       ]]>
     </style>
   </defs>
+  <rect width="920" height="300" fill="#070908"/>
+  <rect width="920" height="300" fill="url(#grain)"/>
+  <rect x="1" y="1" width="918" height="298" fill="none" stroke="#1c241c" stroke-width="2"/>
+  <polygon points="80,18 220,18 250,282 40,282" fill="url(#beam)"/>
+  <path d="M18 18 H46 V22 H22 V46 H18 Z" fill="#c6ff3d" opacity="0.55"/>
+  <path d="M902 18 H874 V22 H898 V46 H902 Z" fill="#4c8bff" opacity="0.55"/>
+  <path d="M18 282 H46 V278 H22 V254 H18 Z" fill="#4c8bff" opacity="0.4"/>
+  <path d="M902 282 H874 V278 H898 V254 H902 Z" fill="#c6ff3d" opacity="0.4"/>
 
-  <rect width="920" height="300" fill="#111111"/>
-  <rect width="920" height="300" fill="url(#aboutDots)" opacity="0.7"/>
-  <rect x="16" y="16" width="888" height="268" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
-  <rect x="16" y="16" width="4" height="268" fill="#4c8bff"/>
-
-  <!-- left identity -->
   <g class="rise d1">
-    <text x="44" y="50" class="eyebrow">DOSSIER</text>
-    <text x="140" y="50" class="idnum">ID / 611</text>
-    <text x="44" y="100" class="name">peter dinis</text>
-    <text x="44" y="128" class="tag">full-stack developer</text>
+    <text x="44" y="48" class="hud">SCOUTING REPORT</text>
+    <text x="250" y="48" class="code">KIT / 611</text>
+    <text x="44" y="98" class="name">peter dinis</text>
+    <text x="44" y="124" class="tag">full-stack · central midfield of the stack</text>
   </g>
-
   <g class="rise d2">
-    <rect x="44" y="152" width="280" height="48" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="60" y="172" class="label">BASE</text>
-    <text x="60" y="190" class="value">praha / czechia</text>
-
-    <rect x="44" y="212" width="280" height="48" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="60" y="232" class="label">STATUS</text>
-    <circle class="pulse" cx="68" cy="248" r="4" fill="#555555"/>
-    <text x="82" y="252" class="badge">OFFLINE</text>
+    <rect x="44" y="148" width="280" height="48" fill="#16281c" stroke="#2a4a32" stroke-width="1"/>
+    <text x="60" y="168" class="label">CLUB</text>
+    <text x="60" y="186" class="value">praha / czechia</text>
+    <rect x="44" y="208" width="280" height="48" fill="#16281c" stroke="#2a4a32" stroke-width="1"/>
+    <text x="60" y="228" class="label">AVAILABILITY</text>
+    <circle class="pulse" cx="68" cy="244" r="4" fill="#555555"/>
+    <text x="82" y="248" class="badge">OUT OF SQUAD</text>
   </g>
-
-  <line x1="352" y1="36" x2="352" y2="264" stroke="#2a2a2a" stroke-width="1"/>
-
-  <!-- right details -->
+  <line x1="352" y1="32" x2="352" y2="268" stroke="#1c241c" stroke-width="1"/>
   <g class="rise d2">
-    <text x="376" y="50" class="eyebrow">PROFILE</text>
+    <text x="376" y="48" class="hud">POSITION</text>
   </g>
-
   <g class="rise d3">
-    <rect x="376" y="68" width="508" height="56" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="392" y="90" class="label">ROLE</text>
-    <text x="392" y="112" class="value">full-stack / js / ts ecosystem</text>
+    <rect x="376" y="64" width="508" height="56" fill="#16281c" stroke="#2a4a32" stroke-width="1"/>
+    <text x="392" y="86" class="label">ROLE</text>
+    <text x="392" y="108" class="value">full-stack / js / ts ecosystem</text>
   </g>
-
   <g class="rise d4">
-    <text x="376" y="152" class="label">CRAFT PIPELINE</text>
-    <rect x="376" y="164" width="110" height="34" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="392" y="186" class="chip">figma</text>
-    <text x="496" y="186" class="arrow">-&gt;</text>
-    <rect x="520" y="164" width="110" height="34" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="536" y="186" class="chip">next.js</text>
-    <text x="640" y="186" class="arrow">-&gt;</text>
-    <rect x="664" y="164" width="100" height="34" fill="#111111" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="680" y="186" class="chip">nestjs</text>
-    <text x="774" y="186" class="arrow">-&gt;</text>
-    <rect x="798" y="164" width="86" height="34" fill="#111111" stroke="#4c8bff" stroke-width="1"/>
-    <text x="810" y="186" class="chip">pg</text>
+    <text x="376" y="148" class="label">BUILD PATTERN</text>
+    <rect x="376" y="160" width="110" height="34" fill="#16281c" stroke="#2a4a32" stroke-width="1"/>
+    <text x="392" y="182" class="chip">figma</text>
+    <text x="496" y="182" class="arrow">-&gt;</text>
+    <rect x="520" y="160" width="110" height="34" fill="#16281c" stroke="#2a4a32" stroke-width="1"/>
+    <text x="536" y="182" class="chip">next.js</text>
+    <text x="640" y="182" class="arrow">-&gt;</text>
+    <rect x="664" y="160" width="100" height="34" fill="#16281c" stroke="#2a4a32" stroke-width="1"/>
+    <text x="680" y="182" class="chip">nestjs</text>
+    <text x="774" y="182" class="arrow">-&gt;</text>
+    <rect x="798" y="160" width="86" height="34" fill="#101411" stroke="#c6ff3d" stroke-width="1"/>
+    <text x="810" y="182" class="chip">pg</text>
   </g>
-
   <g class="rise d5">
-    <line x1="376" y1="220" x2="884" y2="220" stroke="#2a2a2a" stroke-width="1"/>
-    <text x="376" y="246" class="tag">Builds modern web &amp; mobile experiences end-to-end.</text>
-    <text x="376" y="268" class="tag">Clean code. Sharp UI. Ships that hold up.</text>
+    <line x1="376" y1="216" x2="884" y2="216" stroke="#1c241c" stroke-width="1"/>
+    <text x="376" y="242" class="tag">End-to-end builds. From the sketch to the box.</text>
+    <text x="376" y="264" class="code">// clean code · sharp UI · ships that hold up</text>
   </g>
 </svg>

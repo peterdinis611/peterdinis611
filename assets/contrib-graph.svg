@@ -131,7 +131,7 @@
   <text x="28" y="32" class="hud">MATCH KERNEL</text>
   <circle class="live" cx="752" cy="27" r="3.5" fill="#c6ff3d"/>
   <text x="892" y="32" class="pace" text-anchor="end">HIGH PRESS</text>
-  <text x="28" y="52" class="meta">1640 goals   ·   96 appearances   ·   20 last 28d</text>
+  <text x="28" y="52" class="meta">1641 goals   ·   96 appearances   ·   20 last 28d</text>
   <text x="892" y="52" class="code" text-anchor="end">iso 2:1  //  4-3-3  //  git</text>
   <polygon points="70,66 210,66 250,446 20,446" fill="url(#beam)"/>
   <polygon points="830,66 690,66 650,446 880,446" fill="url(#beam)"/>
@@ -164,7 +164,7 @@
     </g>
   </g>
   <rect x="2" y="446" width="916" height="40" fill="#070908"/>
-  <text x="28" y="472" class="meta">unbeaten 5d</text>
+  <text x="28" y="472" class="meta">unbeaten 6d</text>
   <text x="460" y="472" class="code" text-anchor="middle">// compile(git_log) -&gt; stadium</text>
   <text x="892" y="472" class="meta" text-anchor="end">height = commit volume</text>
 </svg>

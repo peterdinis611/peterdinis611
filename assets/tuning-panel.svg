@@ -35,7 +35,7 @@
   <text x="226" y="46" class="live">LIVE  //  3-4-3</text>
   <text x="44" y="84" class="pace">COUNTER</text>
 
-  <text x="44" y="148" class="mega">1679</text>
+  <text x="44" y="148" class="mega">1731</text>
   <text x="44" y="170" class="label">GOALS / 12 MONTHS</text>
 
   <text x="44" y="200" class="label">PRESS</text>
@@ -47,7 +47,7 @@
   <text x="44" y="256" class="metric">23</text>
   <text x="78" y="256" class="unit">apps / 28d</text>
   <line x1="188" y1="244" x2="188" y2="260" stroke="#1c241c" stroke-width="1"/>
-  <text x="204" y="256" class="metric">2</text>
+  <text x="204" y="256" class="metric">3</text>
   <text x="236" y="256" class="unit">unbeaten</text>
 
   <line x1="352" y1="36" x2="352" y2="254" stroke="#1c241c" stroke-width="1"/>
